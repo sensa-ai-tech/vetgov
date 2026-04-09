@@ -1,0 +1,39 @@
+MIT License
+
+Copyright (c) 2026 sensa-ai-tech · 獸醫用藥權修法推動聯盟
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+Note / 補充:
+
+本授權僅適用於本 repo 的原始碼、設計、文件與自動化管線。
+集會文件、陳情書、公民連署資料、個人證言等內容為相應作者與受訪者
+所有,不在 MIT 授權範圍內,請勿未經同意轉載。
+
+站內追蹤的事件資料引用自公開新聞來源與政府公告,原始版權歸各原作者所有。
+本站僅作為公開資訊的整理與時間線呈現。
+
+This license covers only the source code, design, documentation, and
+automation pipeline of this repository. Assembly documents, petitions,
+citizen signatures, and personal testimonies remain the property of their
+respective authors and interviewees, and are not included in the MIT grant.
+Tracked events cite public news sources and government announcements whose
+copyright remains with the original publishers.

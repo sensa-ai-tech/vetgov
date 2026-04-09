@@ -1255,6 +1255,225 @@ strong { font-weight: 700; color: var(--ink); }
   text-transform: uppercase;
 }
 
+/* ─── Nav CTA pill ─────────────────────────────────────── */
+.nav__cta {
+  padding: 6px 14px;
+  background: var(--blood);
+  color: var(--paper) !important;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.nav__cta::after { display: none !important; }
+.nav__cta:hover {
+  background: var(--ink);
+  text-decoration: none;
+}
+
+/* ─── ACT · 三件事 ─────────────────────────────────────── */
+.act {
+  background: var(--paper-soft);
+  padding: var(--space-section) 32px;
+  position: relative;
+  overflow: hidden;
+}
+.act::before {
+  content: "ACT NOW";
+  position: absolute;
+  top: 8%;
+  right: -4%;
+  font-family: var(--serif);
+  font-size: clamp(6rem, 14vw, 14rem);
+  font-weight: 900;
+  color: var(--blood);
+  opacity: 0.05;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  pointer-events: none;
+}
+.act__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  position: relative;
+}
+.act__title {
+  font-family: var(--serif);
+  font-size: var(--step-7);
+  line-height: 0.9;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+.act__lede {
+  font-family: var(--serif);
+  font-size: var(--step-2);
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin-bottom: 64px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.act__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.act__card {
+  background: var(--paper);
+  padding: 48px 40px 40px;
+  border: 1px solid var(--paper-dark);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+}
+.act__card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 var(--ink);
+  border-color: var(--ink);
+}
+.act__card--email {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.act__card--email:hover {
+  box-shadow: 12px 12px 0 var(--blood);
+}
+
+.act__num {
+  font-family: var(--serif);
+  font-size: clamp(5rem, 8vw, 8rem);
+  font-weight: 900;
+  line-height: 0.8;
+  color: var(--ink);
+  letter-spacing: -0.05em;
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  opacity: 0.08;
+  transition: opacity 0.3s, color 0.3s;
+}
+.act__card:hover .act__num {
+  opacity: 0.18;
+  color: var(--blood);
+}
+.act__card--email .act__num { color: var(--paper); opacity: 0.15; }
+.act__card--email:hover .act__num { color: var(--gold-light); opacity: 0.35; }
+
+.act__tag {
+  display: inline-block;
+  padding: 5px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  align-self: flex-start;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.act__card--email .act__tag {
+  background: var(--blood);
+  color: var(--paper);
+}
+
+.act__card-title {
+  font-family: var(--serif);
+  font-size: var(--step-4);
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 16px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+.act__card--email .act__card-title { color: var(--paper); }
+
+.act__card p {
+  font-size: var(--step-0);
+  line-height: 1.75;
+  color: var(--ink-mid);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.act__card--email p { color: var(--mist-soft); }
+
+.act__buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+.act__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1.5px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  background: transparent;
+  color: var(--ink);
+  transition: all 0.2s;
+  text-decoration: none !important;
+}
+.act__btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--blood);
+}
+.act__card--email .act__btn {
+  border-color: var(--paper);
+  color: var(--paper);
+}
+.act__card--email .act__btn:hover {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--gold);
+}
+.act__btn--primary {
+  background: var(--blood);
+  color: var(--paper) !important;
+  border-color: var(--blood);
+}
+.act__btn--primary:hover {
+  background: var(--paper);
+  color: var(--blood) !important;
+  border-color: var(--paper);
+  box-shadow: 3px 3px 0 var(--gold);
+}
+
+.act__note {
+  margin-top: 56px;
+  padding: 24px 28px;
+  background: var(--paper);
+  border-left: 3px solid var(--mist);
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--ink-mid);
+  max-width: 820px;
+}
+.act__note strong {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blood);
+  margin-right: 12px;
+}
+
 /* ─── CTA ───────────────────────────────────────────────── */
 .cta {
   background: var(--ink);
@@ -1412,6 +1631,8 @@ strong { font-weight: 700; color: var(--ink); }
   .demand--1, .demand--2, .demand--3, .demand--4, .demand--5 { grid-column: span 2; }
   .voices__wall { grid-template-columns: repeat(2, 1fr); }
   .voice--07 { grid-column: span 2; }
+  .act__grid { grid-template-columns: 1fr; }
+  .act__card { min-height: auto; }
 }
 @media (max-width: 720px) {
   .nav__inner { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 24px; }

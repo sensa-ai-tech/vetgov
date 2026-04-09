@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#0a0a0a"/>
+  <rect x="0" y="0" width="64" height="4" fill="#c9531a"/>
+  <rect x="0" y="60" width="64" height="4" fill="#c9531a"/>
+  <text x="32" y="46"
+        font-family="Noto Serif TC, Georgia, serif"
+        font-size="42"
+        font-weight="900"
+        fill="#f6f2e9"
+        text-anchor="middle"
+        letter-spacing="-1">50</text>
+  <text x="32" y="58"
+        font-family="Consolas, monospace"
+        font-size="6"
+        fill="#c9531a"
+        text-anchor="middle"
+        letter-spacing="1">§</text>
+</svg>

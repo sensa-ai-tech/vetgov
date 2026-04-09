@@ -5,6 +5,20 @@ __pycache__/
 .venv/
 venv/
 .env
+.env.local
 data/events.db
 data/events.db-journal
 .DS_Store
+Thumbs.db
+
+# 集會文件（個資敏感內容不上 git）
+藥事專案/
+
+# 本機編輯器
+.vscode/
+.idea/
+*.swp
+*~
+
+# Vercel 本機快取
+.vercel/

@@ -1,0 +1,10 @@
+# vetgov.tw · robots.txt
+# 獸醫用藥權修法推動聯盟
+
+User-agent: *
+Allow: /
+Disallow: /data.json
+
+# 歡迎搜尋引擎索引主要頁面,但 data.json 為程式化資料不建議單獨索引
+
+Sitemap: https://vetgov.tw/sitemap.xml

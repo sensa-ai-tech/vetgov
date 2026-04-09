@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6f2e9"/>
+      <stop offset="100%" stop-color="#ebe5d5"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="15%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#c9531a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c9531a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Top marquee band -->
+  <rect x="0" y="0" width="1200" height="56" fill="#0a0a0a"/>
+  <text x="60" y="36"
+        font-family="Consolas, monospace"
+        font-size="16"
+        fill="#c9531a"
+        letter-spacing="3">VETGOV.TW  ●  AN OPEN LETTER  ●  2026.04.09</text>
+
+  <!-- Kicker -->
+  <text x="80" y="130"
+        font-family="Consolas, monospace"
+        font-size="18"
+        fill="#8f3910"
+        letter-spacing="4"
+        font-weight="600">致 立法院 · 衛環委員會</text>
+
+  <!-- Massive headline -->
+  <text x="80" y="240"
+        font-family="Noto Serif TC, Georgia, serif"
+        font-size="130"
+        font-weight="900"
+        fill="#0a0a0a"
+        letter-spacing="-4">我們</text>
+  <text x="80" y="360"
+        font-family="Noto Serif TC, Georgia, serif"
+        font-size="130"
+        font-weight="900"
+        fill="#0a0a0a"
+        letter-spacing="-4">不反對</text>
+  <text x="80" y="480"
+        font-family="Noto Serif TC, Georgia, serif"
+        font-size="130"
+        font-weight="900"
+        fill="#c9531a"
+        letter-spacing="-4">改革。</text>
+
+  <!-- 701 → 144 = 20.5% box -->
+  <rect x="760" y="170" width="360" height="170" fill="#0a0a0a" rx="2"/>
+  <rect x="760" y="166" width="360" height="4" fill="#c9531a"/>
+
+  <text x="940" y="220"
+        font-family="Consolas, monospace"
+        font-size="13"
+        fill="#c9a34a"
+        text-anchor="middle"
+        letter-spacing="3">701 → 144 PROBLEM</text>
+
+  <text x="940" y="295"
+        font-family="Noto Serif TC, Georgia, serif"
+        font-size="78"
+        font-weight="900"
+        fill="#c9531a"
+        text-anchor="middle">20.5%</text>
+
+  <text x="940" y="325"
+        font-family="Consolas, monospace"
+        font-size="14"
+        fill="#b8b4ac"
+        text-anchor="middle"
+        letter-spacing="2">品保登錄率 · 兩年停滯</text>
+
+  <!-- Three demands chips -->
+  <g transform="translate(760, 380)">
+    <rect x="0" y="0" width="360" height="32" fill="none" stroke="#0a0a0a" stroke-width="1.5"/>
+    <text x="180" y="22" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#0a0a0a" text-anchor="middle">01 · 修正藥事法第 50 條</text>
+
+    <rect x="0" y="42" width="360" height="32" fill="none" stroke="#0a0a0a" stroke-width="1.5"/>
+    <text x="180" y="64" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#0a0a0a" text-anchor="middle">02 · 負面表列取代正面表列</text>
+
+    <rect x="0" y="84" width="360" height="32" fill="#0a0a0a"/>
+    <text x="180" y="106" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#f6f2e9" text-anchor="middle">03 · 暫緩 7/1 強制上路</text>
+  </g>
+
+  <!-- Bottom band -->
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="#0a0a0a" stroke-width="2"/>
+
+  <text x="80" y="580"
+        font-family="Noto Serif TC, Georgia, serif"
+        font-size="24"
+        font-weight="700"
+        fill="#0a0a0a">vetgov.tw</text>
+  <text x="80" y="604"
+        font-family="Consolas, monospace"
+        font-size="13"
+        fill="#8a8680"
+        letter-spacing="2">獸醫用藥權修法推動聯盟</text>
+
+  <text x="1120" y="580"
+        font-family="Consolas, monospace"
+        font-size="13"
+        fill="#8a8680"
+        text-anchor="end"
+        letter-spacing="2">VOICES FROM THE FRONT LINE</text>
+  <text x="1120" y="604"
+        font-family="Noto Serif TC, Georgia, serif"
+        font-size="16"
+        font-weight="700"
+        fill="#c9531a"
+        text-anchor="end">5 月底前,排入審議。</text>
+</svg>

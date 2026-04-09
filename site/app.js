@@ -16,7 +16,7 @@ const ORIGIN_LABEL = {
 
 const state = {
   data: null,
-  filters: { stance: "", importance: 0, origin: "" },
+  filters: { stance: "", importance: 0, origin: "", tier: "" },
 };
 
 // ---------- fetch ----------
@@ -48,9 +48,10 @@ function render() {
 
   // Stats
   const counts = data.counts || {};
+  const officialEvents = data.events.filter(e => (e.tier || "media") === "official").length;
   setText("stat-events", data.events.length);
+  setText("stat-official", counts.events_official ?? officialEvents);
   setText("stat-sources", (data.sources_monitored || []).length);
-  setText("stat-raw", counts.raw_total ?? "—");
   setText("stat-core", counts.raw_core ?? "—");
 
   // Timeline
@@ -103,6 +104,7 @@ function renderTimeline() {
 function renderItem(e) {
   const stance = e.stance || "neutral";
   const origin = e.origin || "seed";
+  const tier = e.tier || "media";
   const imp = Number(e.importance) || 1;
 
   const sources = (e.sources || [])
@@ -114,10 +116,15 @@ function renderItem(e) {
     ? `<div class="ti-stakeholders">關係人：${e.stakeholders.map(escapeHtml).join("、")}</div>`
     : "";
 
+  const tierBadge = tier === "official"
+    ? '<span class="ti-badge tier-official">★ 官方公文</span>'
+    : "";
+
   return `
-    <article class="timeline-item imp-${imp}">
+    <article class="timeline-item imp-${imp} tier-${tier}">
       <div class="ti-meta">
         <span class="ti-date">${escapeHtml(e.date || "日期不詳")}</span>
+        ${tierBadge}
         <span class="ti-badge stance-${stance}">${STANCE_LABEL[stance] || stance}</span>
         <span class="ti-badge origin-${origin}">${ORIGIN_LABEL[origin] || origin}</span>
         <span class="ti-imp">重要性 ${imp}/5</span>
@@ -158,11 +165,12 @@ function renderError(err) {
 // ---------- filters ----------
 
 function applyFilters(events) {
-  const { stance, importance, origin } = state.filters;
+  const { stance, importance, origin, tier } = state.filters;
   return events.filter((e) => {
     if (stance && e.stance !== stance) return false;
     if (importance && Number(e.importance || 1) < Number(importance)) return false;
     if (origin && e.origin !== origin) return false;
+    if (tier && (e.tier || "media") !== tier) return false;
     return true;
   });
 }
@@ -179,6 +187,7 @@ function bindFilters() {
   on("filter-stance", "stance");
   on("filter-importance", "importance");
   on("filter-origin", "origin");
+  on("filter-tier", "tier");
 }
 
 // ---------- utils ----------

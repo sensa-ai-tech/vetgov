@@ -54,6 +54,7 @@ def cmd_init(args) -> None:
                 source_urls=e.get("sources", []),
                 importance=int(e.get("importance", 1)),
                 origin=e.get("origin", "seed"),
+                tier=e.get("tier", "media"),
             ):
                 added += 1
         print(f"[OK] Loaded {added} seed events (duplicates skipped).")
@@ -65,34 +66,49 @@ def cmd_ingest(args) -> None:
 
     total = 0
     kept = 0
+    official_kept = 0
     errors = 0
+    by_tier = {"official": 0, "media": 0, "community": 0}
+
     for source in cfg.get("sources", []):
         if source.get("disabled"):
             continue
         name = source["name"]
         url = source["url"]
         stype = source.get("type", "rss")
+        tier = source.get("tier", "media")
         if stype != "rss":
             print(f"[SKIP] {name}: type={stype} not yet supported")
             continue
         try:
-            for item in scraper.fetch_rss(name, url):
+            for item in scraper.fetch_rss(name, url, tier=tier):
                 if not item.url:
                     continue
                 total += 1
+                by_tier[tier] = by_tier.get(tier, 0) + 1
                 text = f"{item.title} {item.summary}"
                 score = classifier.score_text(text)
                 if storage.insert_raw(conn, item, score):
                     if score.category in ("core", "on_topic"):
                         kept += 1
+                        if tier == "official":
+                            official_kept += 1
         except Exception as e:
             errors += 1
             print(f"[WARN] {name}: {e}", file=sys.stderr)
 
     c = storage.counts(conn)
     print(
-        f"[OK] Fetched {total} items, {kept} relevant, {errors} source errors. "
-        f"DB totals: raw={c['raw_total']} core={c['raw_core']} events={c['events']}"
+        f"[OK] Fetched {total} items "
+        f"(official={by_tier.get('official', 0)} "
+        f"media={by_tier.get('media', 0)} "
+        f"community={by_tier.get('community', 0)}), "
+        f"{kept} relevant ({official_kept} from gov), "
+        f"{errors} source errors."
+    )
+    print(
+        f"     DB totals: raw={c['raw_total']} core={c['raw_core']} "
+        f"official={c['raw_official']} events={c['events']}"
     )
 
 
@@ -116,6 +132,11 @@ def cmd_analyze(args) -> None:
         storage.mark_analyzed(conn, c["id"])
         if not result:
             continue
+        # Government sources get a +1 importance bump (capped at 5)
+        item_tier = c.get("tier", "media")
+        importance = int(result.get("importance", 1))
+        if item_tier == "official":
+            importance = min(importance + 1, 5)
         if storage.insert_event(
             conn,
             event_date=result["event_date"],
@@ -124,8 +145,9 @@ def cmd_analyze(args) -> None:
             stance=result.get("stance", "neutral"),
             stakeholders=result.get("stakeholders", []),
             source_urls=[c["url"]],
-            importance=int(result.get("importance", 1)),
+            importance=importance,
             origin="llm",
+            tier=item_tier,
         ):
             added += 1
 
@@ -137,7 +159,12 @@ def cmd_build_site(args) -> None:
     events = storage.all_events(conn)
     cfg = _load_config()
     sources = [
-        {"name": s["name"], "type": s.get("type", "rss"), "url": s["url"]}
+        {
+            "name": s["name"],
+            "type": s.get("type", "rss"),
+            "tier": s.get("tier", "media"),
+            "url": s["url"],
+        }
         for s in cfg.get("sources", [])
         if not s.get("disabled")
     ]

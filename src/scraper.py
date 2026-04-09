@@ -16,17 +16,22 @@ class RawItem:
     title: str
     summary: str
     published: str  # ISO-ish string
+    tier: str = "media"  # official | media | community
 
 
-def fetch_rss(source_name: str, url: str, timeout: int = 20) -> Iterator[RawItem]:
+def fetch_rss(
+    source_name: str,
+    url: str,
+    tier: str = "media",
+    timeout: int = 20,
+) -> Iterator[RawItem]:
     """抓取 RSS/Atom feed，逐筆回傳 RawItem。"""
-    # feedparser 內建 HTTP，但我們用 httpx 以便統一 UA 與 timeout
     try:
         resp = httpx.get(
             url,
             timeout=timeout,
             follow_redirects=True,
-            headers={"User-Agent": "VetDrugTracker/0.1 (+https://github.com/)"},
+            headers={"User-Agent": "VetGovTracker/0.2 (+https://vetgov.tw)"},
         )
         resp.raise_for_status()
         feed = feedparser.parse(resp.content)
@@ -43,6 +48,7 @@ def fetch_rss(source_name: str, url: str, timeout: int = 20) -> Iterator[RawItem
             published=entry.get("published", "")
             or entry.get("updated", "")
             or datetime.utcnow().isoformat(),
+            tier=tier,
         )
 
 

@@ -15,6 +15,7 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS raw_items (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     source TEXT NOT NULL,
+    tier TEXT DEFAULT 'media',
     url TEXT UNIQUE NOT NULL,
     title TEXT NOT NULL,
     summary TEXT,
@@ -36,14 +37,32 @@ CREATE TABLE IF NOT EXISTS events (
     source_urls TEXT,
     importance INTEGER DEFAULT 1,
     origin TEXT DEFAULT 'seed',
+    tier TEXT DEFAULT 'media',
     created_at TEXT NOT NULL,
     UNIQUE(event_date, title)
 );
 
 CREATE INDEX IF NOT EXISTS idx_raw_category ON raw_items(relevance_category);
 CREATE INDEX IF NOT EXISTS idx_raw_fetched ON raw_items(fetched_at);
+CREATE INDEX IF NOT EXISTS idx_raw_tier ON raw_items(tier);
 CREATE INDEX IF NOT EXISTS idx_events_date ON events(event_date);
+CREATE INDEX IF NOT EXISTS idx_events_tier ON events(tier);
 """
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Add new columns to existing DBs."""
+    for table, column, default in [
+        ("raw_items", "tier", "media"),
+        ("events", "tier", "media"),
+    ]:
+        try:
+            conn.execute(
+                f"ALTER TABLE {table} ADD COLUMN {column} TEXT DEFAULT '{default}'"
+            )
+        except sqlite3.OperationalError:
+            pass  # column already exists
+    conn.commit()
 
 
 def connect(db_path: str | Path) -> sqlite3.Connection:
@@ -52,6 +71,7 @@ def connect(db_path: str | Path) -> sqlite3.Connection:
     conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
 
 
@@ -60,11 +80,12 @@ def insert_raw(conn: sqlite3.Connection, item, score) -> bool:
     try:
         conn.execute(
             """INSERT INTO raw_items
-               (source, url, title, summary, published, fetched_at,
+               (source, tier, url, title, summary, published, fetched_at,
                 relevance_score, relevance_category, matched_keywords)
-               VALUES (?,?,?,?,?,?,?,?,?)""",
+               VALUES (?,?,?,?,?,?,?,?,?,?)""",
             (
                 item.source,
+                getattr(item, "tier", "media"),
                 item.url,
                 item.title,
                 item.summary,
@@ -91,13 +112,14 @@ def insert_event(
     source_urls: list[str] | None = None,
     importance: int = 1,
     origin: str = "seed",
+    tier: str = "media",
 ) -> bool:
     try:
         conn.execute(
             """INSERT INTO events
                (event_date, title, summary, stance, stakeholders,
-                source_urls, importance, origin, created_at)
-               VALUES (?,?,?,?,?,?,?,?,?)""",
+                source_urls, importance, origin, tier, created_at)
+               VALUES (?,?,?,?,?,?,?,?,?,?)""",
             (
                 event_date,
                 title,
@@ -107,6 +129,7 @@ def insert_event(
                 json.dumps(source_urls or [], ensure_ascii=False),
                 importance,
                 origin,
+                tier,
                 datetime.utcnow().isoformat(),
             ),
         )
@@ -166,5 +189,11 @@ def counts(conn: sqlite3.Connection) -> dict:
         "raw_on_topic": conn.execute(
             "SELECT COUNT(*) FROM raw_items WHERE relevance_category='on_topic'"
         ).fetchone()[0],
+        "raw_official": conn.execute(
+            "SELECT COUNT(*) FROM raw_items WHERE tier='official'"
+        ).fetchone()[0],
         "events": conn.execute("SELECT COUNT(*) FROM events").fetchone()[0],
+        "events_official": conn.execute(
+            "SELECT COUNT(*) FROM events WHERE tier='official'"
+        ).fetchone()[0],
     }

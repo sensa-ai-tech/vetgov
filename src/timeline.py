@@ -25,6 +25,7 @@ def export(
                 "sources": e.get("source_urls", []),
                 "importance": int(e.get("importance", 1)),
                 "origin": e.get("origin", "seed"),
+                "tier": e.get("tier", "media"),
             }
             for e in events
         ],

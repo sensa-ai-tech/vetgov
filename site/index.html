@@ -346,12 +346,12 @@
         <div class="stat__label">追蹤事件</div>
       </div>
       <div class="stat">
-        <div class="stat__num" id="stat-sources">—</div>
-        <div class="stat__label">監測來源</div>
+        <div class="stat__num" id="stat-official">—</div>
+        <div class="stat__label">★ 官方公文</div>
       </div>
       <div class="stat">
-        <div class="stat__num" id="stat-raw">—</div>
-        <div class="stat__label">原始訊息</div>
+        <div class="stat__num" id="stat-sources">—</div>
+        <div class="stat__label">監測來源</div>
       </div>
       <div class="stat">
         <div class="stat__num" id="stat-core">—</div>
@@ -360,6 +360,14 @@
     </div>
 
     <div class="filters">
+      <label>等級
+        <select id="filter-tier">
+          <option value="">全部</option>
+          <option value="official">★ 官方公文</option>
+          <option value="media">主流媒體</option>
+          <option value="community">公會社群</option>
+        </select>
+      </label>
       <label>立場
         <select id="filter-stance">
           <option value="">全部</option>

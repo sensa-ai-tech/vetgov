@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T11:04:17.067706Z",
+  "generated_at": "2026-04-09T13:18:44.000785Z",
   "policy_effective_date": "2026-07-01",
   "events": [
     {
@@ -15,7 +15,8 @@
       ],
       "sources": [],
       "importance": 5,
-      "origin": "seed"
+      "origin": "seed",
+      "tier": "media"
     },
     {
       "date": "2026-04-09",
@@ -30,7 +31,8 @@
       ],
       "sources": [],
       "importance": 5,
-      "origin": "seed"
+      "origin": "seed",
+      "tier": "media"
     },
     {
       "date": "2026-04-09",
@@ -45,7 +47,8 @@
       ],
       "sources": [],
       "importance": 4,
-      "origin": "seed"
+      "origin": "seed",
+      "tier": "media"
     },
     {
       "date": "2026-04-09",
@@ -59,7 +62,8 @@
       ],
       "sources": [],
       "importance": 4,
-      "origin": "seed"
+      "origin": "seed",
+      "tier": "media"
     },
     {
       "date": "2026-04-09",
@@ -73,7 +77,8 @@
       ],
       "sources": [],
       "importance": 4,
-      "origin": "seed"
+      "origin": "seed",
+      "tier": "media"
     },
     {
       "date": "2026-01-01",
@@ -88,65 +93,126 @@
       ],
       "sources": [],
       "importance": 2,
-      "origin": "seed"
+      "origin": "seed",
+      "tier": "media"
     }
   ],
   "sources_monitored": [
     {
-      "name": "Google News - 獸醫用藥新制",
+      "name": "農業部 · 寵物 / 獸醫",
       "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Amoa.gov.tw+(%E7%8D%B8%E9%86%AB+OR+%E5%AF%B5%E7%89%A9+OR+%E7%94%A8%E8%97%A5)&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "防檢署 (APHIA) · 寵物用藥",
+      "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Aaphia.gov.tw+(%E5%AF%B5%E7%89%A9+OR+%E7%94%A8%E8%97%A5+OR+%E8%99%95%E6%96%B9)&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "立法院 · 獸醫 / 寵物議案",
+      "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Aly.gov.tw+(%E7%8D%B8%E9%86%AB+OR+%E5%AF%B5%E7%89%A9+OR+%E7%94%A8%E8%97%A5)&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "行政院公報 · 動物用藥",
+      "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Agazette.nat.gov.tw+(%E5%8B%95%E7%89%A9%E7%94%A8%E8%97%A5+OR+%E7%8D%B8%E9%86%AB)&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "行政院 · 寵物醫療",
+      "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Aey.gov.tw+(%E5%AF%B5%E7%89%A9+OR+%E7%8D%B8%E9%86%AB+OR+%E5%8B%95%E7%89%A9%E7%94%A8%E8%97%A5)&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "全國法規資料庫 · 動物用藥品管理法",
+      "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Alaw.moj.gov.tw+(%E5%8B%95%E7%89%A9%E7%94%A8%E8%97%A5%E5%93%81+OR+%E7%8D%B8%E9%86%AB%E5%B8%AB%E6%B3%95)&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "政府公開資料 · 寵物用藥",
+      "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Adata.gov.tw+(%E5%AF%B5%E7%89%A9+OR+%E5%8B%95%E7%89%A9%E7%94%A8%E8%97%A5)&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "全 .gov.tw 域 · 7/1 新制",
+      "type": "rss",
+      "tier": "official",
+      "url": "https://news.google.com/rss/search?q=site%3Agov.tw+%E6%8C%87%E5%AE%9A%E7%8D%B8%E9%86%AB%E5%B8%AB%E8%99%95%E6%96%B9&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News · 獸醫用藥新制",
+      "type": "rss",
+      "tier": "media",
       "url": "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB+%E7%94%A8%E8%97%A5+%E6%96%B0%E5%88%B6&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     },
     {
-      "name": "Google News - 指定獸醫師處方",
+      "name": "Google News · 指定獸醫師處方",
       "type": "rss",
+      "tier": "media",
       "url": "https://news.google.com/rss/search?q=%E6%8C%87%E5%AE%9A%E7%8D%B8%E9%86%AB%E5%B8%AB+%E8%99%95%E6%96%B9&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     },
     {
-      "name": "Google News - 寵物處方籤",
+      "name": "Google News · 寵物處方籤",
       "type": "rss",
+      "tier": "media",
       "url": "https://news.google.com/rss/search?q=%E5%AF%B5%E7%89%A9+%E8%99%95%E6%96%B9%E7%B1%A4&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     },
     {
-      "name": "Google News - 防檢署 寵物用藥",
+      "name": "Google News · 防檢署寵物用藥",
       "type": "rss",
+      "tier": "media",
       "url": "https://news.google.com/rss/search?q=%E9%98%B2%E6%AA%A2%E7%BD%B2+%E5%AF%B5%E7%89%A9%E7%94%A8%E8%97%A5&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     },
     {
-      "name": "Google News - 獸醫師公會",
+      "name": "Google News · 動物用藥品管理法",
       "type": "rss",
-      "url": "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB%E5%B8%AB%E5%85%AC%E6%9C%83&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
-    },
-    {
-      "name": "Google News - 動物用藥品管理法",
-      "type": "rss",
+      "tier": "media",
       "url": "https://news.google.com/rss/search?q=%E5%8B%95%E7%89%A9%E7%94%A8%E8%97%A5%E5%93%81%E7%AE%A1%E7%90%86%E6%B3%95&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     },
     {
-      "name": "Google News - 心絲蟲 寵物 新制",
+      "name": "Google News · 心絲蟲新制",
       "type": "rss",
+      "tier": "media",
       "url": "https://news.google.com/rss/search?q=%E5%BF%83%E7%B5%B2%E8%9F%B2+%E5%AF%B5%E7%89%A9+%E6%96%B0%E5%88%B6&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     },
     {
-      "name": "Google News - 農業部 寵物醫療",
+      "name": "Google News · 農業部寵物醫療",
       "type": "rss",
+      "tier": "media",
       "url": "https://news.google.com/rss/search?q=%E8%BE%B2%E6%A5%AD%E9%83%A8+%E5%AF%B5%E7%89%A9%E9%86%AB%E7%99%82&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     },
     {
-      "name": "自由時報 生活版",
+      "name": "自由時報 · 生活版",
       "type": "rss",
+      "tier": "media",
       "url": "https://news.ltn.com.tw/rss/life.xml"
     },
     {
-      "name": "中央社 政治",
+      "name": "中央社 · 政治",
       "type": "rss",
+      "tier": "media",
       "url": "https://feeds.feedburner.com/rsscna/politics"
+    },
+    {
+      "name": "Google News · 獸醫師公會",
+      "type": "rss",
+      "tier": "community",
+      "url": "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB%E5%B8%AB%E5%85%AC%E6%9C%83&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     }
   ],
   "counts": {
-    "raw_total": 0,
-    "raw_core": 0,
-    "raw_on_topic": 0,
-    "events": 6
+    "raw_total": 1129,
+    "raw_core": 4,
+    "raw_on_topic": 102,
+    "raw_official": 709,
+    "events": 6,
+    "events_official": 0
   }
 }

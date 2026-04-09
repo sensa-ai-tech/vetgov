@@ -1092,6 +1092,24 @@ strong { font-weight: 700; color: var(--ink); }
 .ti-badge.stance-mixed      { background: var(--gold); color: var(--ink); }
 .ti-badge.origin-seed { background: var(--ink); color: var(--paper); }
 .ti-badge.origin-llm  { background: var(--paper); color: var(--ink); border: 1px solid var(--ink); }
+.ti-badge.tier-official {
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  box-shadow: 0 0 0 2px var(--gold-light);
+}
+/* Government items get a gold left border accent */
+.timeline-item.tier-official {
+  background: linear-gradient(90deg, rgba(201, 163, 74, 0.06), transparent 50%);
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+}
+.timeline-item.tier-official::before {
+  background: var(--gold);
+  border-color: var(--gold-light);
+  box-shadow: 0 0 0 4px rgba(201, 163, 74, 0.25);
+}
 .ti-imp {
   font-family: var(--mono);
   font-size: 10px;

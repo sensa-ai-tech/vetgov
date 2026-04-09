@@ -58,6 +58,11 @@ sources:
     tier: official
     url: "https://news.google.com/rss/search?q=site%3Agov.tw+%E6%8C%87%E5%AE%9A%E7%8D%B8%E9%86%AB%E5%B8%AB%E8%99%95%E6%96%B9&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
 
+  - name: "立法院議事 · 藥事法第 50 條"
+    type: rss
+    tier: official
+    url: "https://news.google.com/rss/search?q=%E8%97%A5%E4%BA%8B%E6%B3%95%E7%AC%AC50%E6%A2%9D+OR+%E8%97%A5%E4%BA%8B%E6%B3%95%E4%BF%AE%E6%AD%A3&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
   # ════════════════════════════════════════════════════════════
   # Tier 2 · 主流媒體
   # ════════════════════════════════════════════════════════════

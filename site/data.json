@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T18:24:11.135768Z",
+  "generated_at": "2026-04-09T23:01:32.266753Z",
   "policy_effective_date": "2026-07-01",
   "events": [
     {
@@ -228,10 +228,10 @@
     }
   ],
   "counts": {
-    "raw_total": 1143,
-    "raw_core": 14,
-    "raw_on_topic": 128,
-    "raw_official": 732,
+    "raw_total": 1142,
+    "raw_core": 13,
+    "raw_on_topic": 124,
+    "raw_official": 733,
     "events": 7,
     "events_official": 2
   }

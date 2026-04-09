@@ -1,0 +1,152 @@
+{
+  "generated_at": "2026-04-09T11:04:17.067706Z",
+  "policy_effective_date": "2026-07-01",
+  "events": [
+    {
+      "date": "2026-07-01",
+      "title": "強制上路日 · 配套是否到位?",
+      "summary": "依農業部動植物防疫檢疫署規劃,特定寵物動物用藥品將於此日起須由指定獸醫師開立處方後方能取得。第一線獸醫師關切:電子處方系統、跨院流通、罰則歸屬、偏鄉支援等配套措施是否已完備?實際品項清單依農業部最新公告為準。",
+      "stance": "opposed",
+      "stakeholders": [
+        "農業部",
+        "動植物防疫檢疫署",
+        "全國執業獸醫師",
+        "寵物飼主"
+      ],
+      "sources": [],
+      "importance": 5,
+      "origin": "seed"
+    },
+    {
+      "date": "2026-04-09",
+      "title": "配套缺口警示 · 電子處方系統仍未啟動",
+      "summary": "截至本站發布日,農業部尚未公布電子處方系統的具體規格、開發時程與跨院流通機制。第一線獸醫師憂慮:若新制上路時仍需手寫紙本處方,飼主勢必要在不同動物醫院之間奔波,徒增執行成本與錯誤風險。請主管機關儘速說明配套時程。",
+      "stance": "opposed",
+      "stakeholders": [
+        "農業部",
+        "動植物防疫檢疫署",
+        "獸醫師公會",
+        "資訊系統廠商"
+      ],
+      "sources": [],
+      "importance": 5,
+      "origin": "seed"
+    },
+    {
+      "date": "2026-04-09",
+      "title": "責任歸屬待釐清 · 罰則可能落在第一線",
+      "summary": "代購平台、跨境寄藥、寵物展會的擦邊商品、電商平台違規販售——這些真正失控的通路,新制的罰則將如何執行?若上游違規難追查,最終可能導致稽查壓力集中於第一線的診間與合法動物醫院。第一線獸醫師呼籲農業部明確公布罰則適用範圍與責任切割。",
+      "stance": "opposed",
+      "stakeholders": [
+        "農業部",
+        "動植物防疫檢疫署",
+        "執業獸醫師",
+        "寵物業者公會"
+      ],
+      "sources": [],
+      "importance": 4,
+      "origin": "seed"
+    },
+    {
+      "date": "2026-04-09",
+      "title": "偏鄉醫療可近性警訊",
+      "summary": "台灣部分縣市僅有個位數家動物醫院。新制一旦讓原本在寵物店、農會或網購即可取得的預防藥(心絲蟲、蚤蝨)全面改為處方品項,偏鄉飼主的取得成本將顯著上升,可能導致放棄預防治療的風險。呼籲農業部同步編列補助預算,支援偏鄉動物醫院與飼主過渡。",
+      "stance": "opposed",
+      "stakeholders": [
+        "農業部",
+        "偏鄉動物醫院",
+        "寵物飼主"
+      ],
+      "sources": [],
+      "importance": 4,
+      "origin": "seed"
+    },
+    {
+      "date": "2026-04-09",
+      "title": "公民追蹤器啟動 · 第一線告白",
+      "summary": "本站由關心新制的獸醫師與公民科技志工自發建立,目的是追蹤 7/1 新制的後續發展、記錄第一線處境,並公開呼籲主管機關正視配套缺口。五大訴求同步發布,歡迎飼主、獸醫師、動保團體連署與回饋。",
+      "stance": "mixed",
+      "stakeholders": [
+        "執業獸醫師",
+        "公民科技社群",
+        "寵物飼主"
+      ],
+      "sources": [],
+      "importance": 4,
+      "origin": "seed"
+    },
+    {
+      "date": "2026-01-01",
+      "title": "制度背景 · 動物用藥品管理法與獸醫師法",
+      "summary": "台灣對動物用藥品之管理依據《動物用藥品管理法》與《獸醫師法》。近年隨寵物飼養數量增加、飼主對醫療品質期待提升,對處方制度的討論持續發酵,為本次新制的制度背景。支持者強調用藥安全,第一線則關切執行面配套。",
+      "stance": "neutral",
+      "stakeholders": [
+        "農業部",
+        "獸醫師公會",
+        "立法院",
+        "寵物業者公會"
+      ],
+      "sources": [],
+      "importance": 2,
+      "origin": "seed"
+    }
+  ],
+  "sources_monitored": [
+    {
+      "name": "Google News - 獸醫用藥新制",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB+%E7%94%A8%E8%97%A5+%E6%96%B0%E5%88%B6&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News - 指定獸醫師處方",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E6%8C%87%E5%AE%9A%E7%8D%B8%E9%86%AB%E5%B8%AB+%E8%99%95%E6%96%B9&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News - 寵物處方籤",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E5%AF%B5%E7%89%A9+%E8%99%95%E6%96%B9%E7%B1%A4&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News - 防檢署 寵物用藥",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E9%98%B2%E6%AA%A2%E7%BD%B2+%E5%AF%B5%E7%89%A9%E7%94%A8%E8%97%A5&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News - 獸醫師公會",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB%E5%B8%AB%E5%85%AC%E6%9C%83&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News - 動物用藥品管理法",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E5%8B%95%E7%89%A9%E7%94%A8%E8%97%A5%E5%93%81%E7%AE%A1%E7%90%86%E6%B3%95&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News - 心絲蟲 寵物 新制",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E5%BF%83%E7%B5%B2%E8%9F%B2+%E5%AF%B5%E7%89%A9+%E6%96%B0%E5%88%B6&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News - 農業部 寵物醫療",
+      "type": "rss",
+      "url": "https://news.google.com/rss/search?q=%E8%BE%B2%E6%A5%AD%E9%83%A8+%E5%AF%B5%E7%89%A9%E9%86%AB%E7%99%82&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "自由時報 生活版",
+      "type": "rss",
+      "url": "https://news.ltn.com.tw/rss/life.xml"
+    },
+    {
+      "name": "中央社 政治",
+      "type": "rss",
+      "url": "https://feeds.feedburner.com/rsscna/politics"
+    }
+  ],
+  "counts": {
+    "raw_total": 0,
+    "raw_core": 0,
+    "raw_on_topic": 0,
+    "events": 6
+  }
+}

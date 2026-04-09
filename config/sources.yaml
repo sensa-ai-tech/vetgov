@@ -1,0 +1,52 @@
+# 資料來源清單 — 可自由增刪
+# type: rss | html
+# 新增來源後不需改程式碼，直接跑 `python -m src.cli ingest`
+
+sources:
+  - name: "Google News - 獸醫用藥新制"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB+%E7%94%A8%E8%97%A5+%E6%96%B0%E5%88%B6&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News - 指定獸醫師處方"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E6%8C%87%E5%AE%9A%E7%8D%B8%E9%86%AB%E5%B8%AB+%E8%99%95%E6%96%B9&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News - 寵物處方籤"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E5%AF%B5%E7%89%A9+%E8%99%95%E6%96%B9%E7%B1%A4&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News - 防檢署 寵物用藥"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E9%98%B2%E6%AA%A2%E7%BD%B2+%E5%AF%B5%E7%89%A9%E7%94%A8%E8%97%A5&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News - 獸醫師公會"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB%E5%B8%AB%E5%85%AC%E6%9C%83&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News - 動物用藥品管理法"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E5%8B%95%E7%89%A9%E7%94%A8%E8%97%A5%E5%93%81%E7%AE%A1%E7%90%86%E6%B3%95&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News - 心絲蟲 寵物 新制"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E5%BF%83%E7%B5%B2%E8%9F%B2+%E5%AF%B5%E7%89%A9+%E6%96%B0%E5%88%B6&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News - 農業部 寵物醫療"
+    type: rss
+    url: "https://news.google.com/rss/search?q=%E8%BE%B2%E6%A5%AD%E9%83%A8+%E5%AF%B5%E7%89%A9%E9%86%AB%E7%99%82&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  # 追加：直接針對特定新聞台的寵物相關 RSS（若有提供）
+  - name: "自由時報 生活版"
+    type: rss
+    url: "https://news.ltn.com.tw/rss/life.xml"
+    # 注意：非主題專屬，會靠 classifier 做相關度過濾
+
+  - name: "中央社 政治"
+    type: rss
+    url: "https://feeds.feedburner.com/rsscna/politics"
+
+  # 範例：停用一個來源
+  # - name: "某來源"
+  #   type: rss
+  #   url: "https://example.com/rss"
+  #   disabled: true

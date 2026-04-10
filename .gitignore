@@ -11,8 +11,9 @@ data/events.db-journal
 .DS_Store
 Thumbs.db
 
-# 集會文件（個資敏感內容不上 git）
+# 集會文件（個資敏感內容 / 逐字稿不上 git）
 藥事專案/
+0410公聽會/
 
 # 本機編輯器
 .vscode/

@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4/10 公聽會速報 · vetgov.tw</title>
+<meta name="description" content="2026 年 4 月 10 日公聽會速報:九成與會者投票延後,農業部提出五項修正,7/1 確認延後,配套未完備不上路。全球制度比較、關鍵爭點、風險分析完整彙整。">
+<meta property="og:title" content="4/10 公聽會速報 · vetgov.tw">
+<meta property="og:description" content="九成與會者投票延後。配套未完備,不上路。農業部五項修正、全球制度比較、風險分析完整彙整。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vetgov.tw/hearing-0410">
+<meta property="og:site_name" content="獸醫用藥權修法推動聯盟 · vetgov.tw">
+<meta property="og:image" content="https://vetgov.tw/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vetgov.tw/og-image.svg">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://vetgov.tw/hearing-0410">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<style>
+/* ─── Hearing page: reuse about.html patterns ─────────── */
+.hearing {
+  background: var(--paper);
+  padding: clamp(60px, 10vh, 120px) 32px clamp(80px, 12vh, 140px);
+}
+.hearing__inner {
+  max-width: var(--container-tight);
+  margin: 0 auto;
+}
+.hearing__back {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--mist);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 56px;
+  transition: color 0.2s;
+}
+.hearing__back:hover { color: var(--blood); }
+.hearing__kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--blood);
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
+  display: inline-block;
+}
+.hearing__title {
+  font-family: var(--serif);
+  font-size: var(--step-7);
+  line-height: 0.9;
+  color: var(--ink);
+  margin-bottom: 48px;
+  letter-spacing: -0.03em;
+}
+.hearing__lead {
+  font-family: var(--serif);
+  font-size: var(--step-3);
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 700;
+  padding: 32px 0 32px 32px;
+  border-left: 4px solid var(--blood);
+  margin-bottom: 64px;
+}
+
+/* ─── Section headings ────────────────────────────────── */
+.hearing__h2 {
+  font-family: var(--serif);
+  font-size: var(--step-4);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 64px 0 20px;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+}
+.hearing__h2 .num {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--blood);
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.hearing p, .hearing li {
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.85;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.hearing p { margin: 16px 0; }
+.hearing strong { color: var(--ink); font-weight: 700; }
+
+/* ─── Divider ─────────────────────────────────────────── */
+.hearing__divider {
+  margin: 80px 0;
+  border: 0;
+  border-top: 1px solid var(--paper-dark);
+  text-align: center;
+  position: relative;
+}
+.hearing__divider::after {
+  content: "\2726";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  padding: 0 16px;
+  color: var(--blood);
+  font-size: 14px;
+}
+
+/* ─── Decision card ───────────────────────────────────── */
+.decision-card {
+  background: var(--paper);
+  border: 3px solid var(--gold);
+  padding: 48px 40px;
+  margin: 40px 0;
+  position: relative;
+  text-align: center;
+}
+.decision-card::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  height: 6px;
+  background: var(--gold);
+}
+.decision-card__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.decision-card__verdict {
+  font-family: var(--serif);
+  font-size: var(--step-5);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+.decision-card__sub {
+  font-family: var(--serif);
+  font-size: var(--step-2);
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+.decision-card__sub em {
+  color: var(--blood);
+  font-style: normal;
+  font-weight: 900;
+}
+
+/* ─── Correction cards ────────────────────────────────── */
+.corrections {
+  counter-reset: correction;
+  margin: 32px 0;
+}
+.correction {
+  counter-increment: correction;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid var(--paper-dark);
+  align-items: baseline;
+}
+.correction:last-child {
+  border-bottom: 1px solid var(--paper-dark);
+}
+.correction__num {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.2em;
+  color: var(--blood);
+  font-weight: 500;
+}
+.correction__body {
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.correction__body strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+.correction__detail {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--mist);
+  margin-top: 6px;
+  display: block;
+}
+
+/* ─── Participants tag bar ────────────────────────────── */
+.participants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 32px;
+}
+.participant-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--paper-dark);
+  background: var(--paper-soft);
+  color: var(--ink-mid);
+}
+
+/* ─── Issue cards (Section B) ─────────────────────────── */
+.issues {
+  margin: 32px 0;
+}
+.issue-card {
+  background: var(--paper);
+  border: 1px solid var(--paper-dark);
+  padding: 36px 32px;
+  margin: 20px 0;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.issue-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--ink);
+  border-color: var(--ink);
+}
+.issue-card__tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--blood);
+  margin-bottom: 10px;
+}
+.issue-card__title {
+  font-family: var(--serif);
+  font-size: var(--step-2);
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.issue-card__body {
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.8;
+  color: var(--ink-mid);
+}
+.issue-card__body strong {
+  color: var(--ink);
+  background: linear-gradient(180deg, transparent 60%, rgba(201, 83, 26, 0.2) 60%);
+}
+
+/* ─── Comparison table (Section C) ────────────────────── */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 32px 0;
+  border: 1px solid var(--paper-dark);
+}
+.hearing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  line-height: 1.6;
+  min-width: 720px;
+}
+.hearing-table thead {
+  background: var(--ink);
+  color: var(--paper);
+}
+.hearing-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.hearing-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--paper-dark);
+  vertical-align: top;
+}
+.hearing-table tbody tr:nth-child(even) {
+  background: var(--paper-soft);
+}
+.hearing-table tbody tr:hover {
+  background: rgba(201, 163, 74, 0.1);
+}
+.hearing-table .row--highlight {
+  background: rgba(201, 83, 26, 0.08) !important;
+  border-left: 4px solid var(--blood);
+  font-weight: 700;
+}
+.hearing-table .row--highlight td {
+  color: var(--ink);
+}
+
+/* ─── Takeaway list ───────────────────────────────────── */
+.takeaways {
+  margin: 32px 0;
+  counter-reset: takeaway;
+}
+.takeaway {
+  counter-increment: takeaway;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--paper-dark);
+  align-items: baseline;
+}
+.takeaway__num::before {
+  content: counter(takeaway);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--blood);
+  font-weight: 500;
+}
+.takeaway__text {
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.takeaway__text strong {
+  color: var(--ink);
+}
+
+/* ─── Stakeholder table (Section D) ───────────────────── */
+.stakeholder-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  line-height: 1.65;
+  margin: 32px 0;
+}
+.stakeholder-table th {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 16px;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.stakeholder-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--paper-dark);
+  vertical-align: top;
+}
+.stakeholder-table tr:nth-child(even) {
+  background: var(--paper-soft);
+}
+.stakeholder-table .stake-name {
+  font-family: var(--sans);
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+/* ─── Risk section (Section E) ────────────────────────── */
+.risk-section {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(60px, 10vh, 120px) 32px;
+  margin: 80px -32px;
+  position: relative;
+}
+.risk-section::before {
+  content: "RISK";
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  font-family: var(--serif);
+  font-size: clamp(8rem, 18vw, 16rem);
+  font-weight: 900;
+  color: var(--paper);
+  opacity: 0.025;
+  letter-spacing: -0.05em;
+  line-height: 0.8;
+  pointer-events: none;
+}
+.risk-section .section-label__num {
+  background: var(--paper);
+  color: var(--ink);
+}
+.risk-section .section-label {
+  color: var(--paper);
+}
+.risk-section .hearing__h2 {
+  color: var(--paper);
+  margin-top: 0;
+}
+.risk-inner {
+  max-width: var(--container-tight);
+  margin: 0 auto;
+}
+
+/* Risk mini tables */
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  line-height: 1.6;
+  margin: 24px 0;
+}
+.risk-table th {
+  background: rgba(255,255,255,0.08);
+  color: var(--paper);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.risk-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: var(--mist-soft);
+  vertical-align: top;
+}
+.risk-table .status-resolved {
+  color: var(--moss-light, #2d5f47);
+  font-weight: 700;
+}
+.risk-table .status-unresolved {
+  color: var(--blood-soft);
+  font-weight: 700;
+}
+
+.risk-card {
+  background: rgba(255,255,255,0.04);
+  border-left: 4px solid var(--blood);
+  padding: 32px;
+  margin: 24px 0;
+}
+.risk-card__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--blood-soft);
+  margin-bottom: 12px;
+}
+.risk-card__stat {
+  font-family: var(--serif);
+  font-size: var(--step-4);
+  font-weight: 900;
+  color: var(--paper);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.risk-card__body {
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.8;
+  color: var(--mist-soft);
+}
+
+.risk-highlight {
+  background: rgba(201, 83, 26, 0.12);
+  border: 1px solid rgba(201, 83, 26, 0.3);
+  padding: 28px 32px;
+  margin: 32px 0;
+  text-align: center;
+}
+.risk-highlight__text {
+  font-family: var(--serif);
+  font-size: var(--step-3);
+  font-weight: 900;
+  color: var(--paper);
+  line-height: 1.4;
+}
+.risk-highlight__text em {
+  color: var(--blood-soft);
+  font-style: normal;
+}
+
+/* Vacuum table */
+.vacuum-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  margin: 24px 0;
+}
+.vacuum-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: var(--mist-soft);
+}
+.vacuum-table td:first-child {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mist);
+  letter-spacing: 0.1em;
+  width: 32px;
+  text-align: center;
+}
+.vacuum-table td:last-child {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--blood-soft);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ─── Checklist (Section F) ───────────────────────────── */
+.checklist {
+  margin: 32px 0;
+  counter-reset: checklist;
+}
+.check-item {
+  counter-increment: checklist;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--paper-dark);
+  align-items: baseline;
+}
+.check-item__box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--paper-dark);
+  background: var(--paper);
+  margin-top: 3px;
+}
+.check-item__text {
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.check-item__text strong {
+  color: var(--ink);
+}
+
+/* ─── Disclaimer bar ──────────────────────────────────── */
+.disclaimer-bar {
+  background: var(--paper-soft);
+  border: 1px solid var(--paper-dark);
+  padding: 20px 28px;
+  margin: 64px 0 0;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  line-height: 1.7;
+  color: var(--mist);
+}
+
+/* ─── Hearing-specific responsive ─────────────────────── */
+@media (max-width: 720px) {
+  .hearing { padding: 48px 20px 60px; }
+  .hearing__lead { padding-left: 20px; font-size: var(--step-2); }
+  .correction { grid-template-columns: 48px 1fr; gap: 16px; }
+  .risk-section { margin: 60px -20px; padding: 48px 20px; }
+  .decision-card { padding: 32px 24px; }
+  .decision-card__verdict { font-size: var(--step-4); }
+  .issue-card { padding: 28px 24px; }
+  .stakeholder-table { font-size: 12px; }
+  .stakeholder-table .stake-name { min-width: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- =====================================================
+     MARQUEE
+     ===================================================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>4/10 公聽會速報</span>
+    <span aria-hidden="true">●</span>
+    <span>7/1 確認延後</span>
+    <span aria-hidden="true">●</span>
+    <span>公告制取代登錄制</span>
+    <span aria-hidden="true">●</span>
+    <span>配套未完備不上路</span>
+    <span aria-hidden="true">●</span>
+    <span>九成投票支持延後</span>
+    <span aria-hidden="true">●</span>
+    <span>4/10 公聽會速報</span>
+    <span aria-hidden="true">●</span>
+    <span>7/1 確認延後</span>
+    <span aria-hidden="true">●</span>
+    <span>公告制取代登錄制</span>
+    <span aria-hidden="true">●</span>
+    <span>配套未完備不上路</span>
+    <span aria-hidden="true">●</span>
+    <span>九成投票支持延後</span>
+    <span aria-hidden="true">●</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     NAV
+     ===================================================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <span class="nav__mark">vetgov.tw</span>
+      <span class="nav__sub">獸醫用藥權修法推動聯盟</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#manifesto">聲明</a>
+      <a href="index.html#demands">訴求</a>
+      <a href="index.html#voices">處境</a>
+      <a href="index.html#timeline">時間線</a>
+      <a href="about.html">關於</a>
+      <a href="hearing-0410.html" style="color: var(--blood);">公聽會</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =====================================================
+     HERO HEADER
+     ===================================================== -->
+<section class="hearing">
+  <div class="hearing__inner">
+
+    <a href="index.html" class="hearing__back">&larr; Back to Letter</a>
+
+    <p class="hearing__kicker">Public Hearing Report &middot; 2026 . 04 . 10</p>
+
+    <h1 class="hearing__title">
+      4/10<br>
+      <span class="accent-underline">公聽會速報</span>
+    </h1>
+
+    <p class="hearing__lead">
+      九成與會者投票延後。<br>
+      配套未完備,不上路。<br>
+      &mdash;&mdash; 但這只是開始。
+    </p>
+
+    <!-- =================================================
+         SECTION A: 會議速報
+         ================================================= -->
+    <div class="section-label">
+      <span class="section-label__num">01</span>
+      <span class="section-label__text">Summary</span>
+    </div>
+
+    <h2 class="hearing__h2"><span class="num">&sect; 01</span>會議速報</h2>
+
+    <p><strong>農業部次長主持</strong>,農業部防檢署、衛福部食藥署、疾管署、林保署、各地獸醫師公會、藥師公會、製藥工業同業公會等代表與會。</p>
+
+    <div class="participants">
+      <span class="participant-tag">農業部</span>
+      <span class="participant-tag">防檢署</span>
+      <span class="participant-tag">食藥署</span>
+      <span class="participant-tag">疾管署</span>
+      <span class="participant-tag">林保署</span>
+      <span class="participant-tag">獸醫師公會全聯會</span>
+      <span class="participant-tag">各地方獸醫師公會</span>
+      <span class="participant-tag">藥師公會</span>
+      <span class="participant-tag">製藥工業同業公會</span>
+      <span class="participant-tag">動物用藥工業公會</span>
+    </div>
+
+    <p style="margin-bottom: 32px;"><strong>農業部提出五項修正方案:</strong></p>
+
+    <div class="corrections">
+      <div class="correction">
+        <span class="correction__num">01</span>
+        <div class="correction__body">
+          <strong>動物保護藥品改為「公告制」(免登錄)</strong>
+          <span class="correction__detail">原先要求藥廠主動登錄,改為農業部直接公告品項。品項數從 701 擴增至 732 項。</span>
+        </div>
+      </div>
+      <div class="correction">
+        <span class="correction__num">02</span>
+        <div class="correction__body">
+          <strong>維持雙軌制取藥</strong>
+          <span class="correction__detail">獸醫師可透過藥局或直接向藥商取得人用藥品,兩條路徑並行。</span>
+        </div>
+      </div>
+      <div class="correction">
+        <span class="correction__num">03</span>
+        <div class="correction__body">
+          <strong>新增「藥局寄存機制」</strong>
+          <span class="correction__detail">藥品實體存放於動物醫院,藥局提供名義掛靠,解決偏鄉取藥問題。</span>
+        </div>
+      </div>
+      <div class="correction">
+        <span class="correction__num">04</span>
+        <div class="correction__body">
+          <strong>放寬標籤標示規範</strong>
+          <span class="correction__detail">醫用氣體改用吊牌標示;注射劑免標示最小單位標示。</span>
+        </div>
+      </div>
+      <div class="correction">
+        <span class="correction__num">05</span>
+        <div class="correction__body">
+          <strong>完善專案進口機制</strong>
+          <span class="correction__detail">獸醫師公會可作為專案進口主體,不再限於個別醫院。</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="decision-card">
+      <div class="decision-card__label">Meeting Decision</div>
+      <div class="decision-card__verdict">7/1 確認延後</div>
+      <div class="decision-card__sub">
+        九成與會者投票延後。<br>
+        <em>配套未完備,不上路。</em>
+      </div>
+    </div>
+
+    <hr class="hearing__divider">
+
+    <!-- =================================================
+         SECTION B: 關鍵爭點
+         ================================================= -->
+    <div class="section-label">
+      <span class="section-label__num">02</span>
+      <span class="section-label__text">Critical Issues</span>
+    </div>
+
+    <h2 class="hearing__h2"><span class="num">&sect; 02</span>關鍵爭點</h2>
+
+    <div class="issues">
+
+      <div class="issue-card">
+        <div class="issue-card__tag">Drug Shortage</div>
+        <div class="issue-card__title">Buprenorphine 缺藥事件</div>
+        <div class="issue-card__body">全台獸醫師買不到 Buprenorphine(丁基原啡因),<strong>全聯會統計處理 200-300 件相關案件</strong>。這是動物術後最關鍵的止痛藥之一,缺藥直接影響手術品質與動物福利。事件凸顯現行制度對管制藥品供應鏈的脆弱性。</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-card__tag">Access Gap</div>
+        <div class="issue-card__title">偏鄉用藥困境</div>
+        <div class="issue-card__body">宜蘭夜間急診案例:<strong>藥局全數關閉,最近藥局車程兩小時</strong>。強制藥局中介制度在偏鄉形同虛設,動物急診將無藥可用。寄存機制雖被提出,但九項關鍵細節全未定義。</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-card__tag">Exclusion Clause</div>
+        <div class="issue-card__title">排擠條款</div>
+        <div class="issue-card__body">一旦某藥品有動物用藥許可證,對應的人用藥品品項即被刪除。<strong>Cephalexin(頭孢氨苄)與胰島素已受影響</strong>。動物用藥的劑型與規格未必適合所有動物種類,排擠條款導致臨床選擇被壓縮。此條款為全球獨有。</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-card__tag">Policy Debate</div>
+        <div class="issue-card__title">負面表列 vs 正面表列</div>
+        <div class="issue-card__body">正面表列:只能用「名單上有的」,台灣現制僅 700 餘項。負面表列:除了禁用清單外都能用,<strong>加拿大禁藥清單 1,500+ 項,意味著可用藥品遠超台灣數倍</strong>。國際主流採負面表列或階梯式制度,正面表列全球罕見。</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-card__tag">Legal Conflict</div>
+        <div class="issue-card__title">藥事法 &sect;50 vs 動保法衝突</div>
+        <div class="issue-card__body">藥事法第 50 條未將動物醫院列為合法購藥對象,獸醫師長期處於<strong>「合法使用、非法購買」的灰色地帶</strong>。管理辦法試圖在不修藥事法的前提下解決問題,但法律位階不足,根本矛盾未解。</div>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-card__tag">Supply Chain</div>
+        <div class="issue-card__title">GDP 規範導致藥商拒絕出貨</div>
+        <div class="issue-card__body">藥品優良運銷規範(GDP)要求完整溫控與紀錄,<strong>藥商出貨給非藥局通路的法律風險與合規成本過高</strong>,多數藥商選擇拒絕供貨。制度設計忽視供應鏈現實,導致理論上可購買但實際上買不到。</div>
+      </div>
+
+    </div>
+
+    <hr class="hearing__divider">
+
+    <!-- =================================================
+         SECTION C: 全球制度比較
+         ================================================= -->
+    <div class="section-label">
+      <span class="section-label__num">03</span>
+      <span class="section-label__text">Global Comparison</span>
+    </div>
+
+    <h2 class="hearing__h2"><span class="num">&sect; 03</span>全球制度比較</h2>
+
+    <p>下表彙整主要國家對伴侶動物使用人用藥品的管理制度,突顯台灣現制在全球的獨特性。</p>
+
+    <div class="table-wrap">
+      <table class="hearing-table">
+        <thead>
+          <tr>
+            <th>國家</th>
+            <th>制度類型</th>
+            <th>伴侶動物可用藥品數</th>
+            <th>獸醫能否直接取藥</th>
+            <th>須經藥局</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>美國</strong></td>
+            <td>負面表列</td>
+            <td>無上限(零禁藥)</td>
+            <td>可</td>
+            <td>非強制</td>
+          </tr>
+          <tr>
+            <td><strong>加拿大</strong></td>
+            <td>負面表列</td>
+            <td>無上限</td>
+            <td>可</td>
+            <td>非強制</td>
+          </tr>
+          <tr>
+            <td><strong>歐盟</strong></td>
+            <td>階梯式 Cascade</td>
+            <td>極廣</td>
+            <td>依階梯可</td>
+            <td>依各國</td>
+          </tr>
+          <tr>
+            <td><strong>英國</strong></td>
+            <td>階梯式</td>
+            <td>極廣</td>
+            <td>可</td>
+            <td>可選</td>
+          </tr>
+          <tr>
+            <td><strong>澳洲</strong></td>
+            <td>登記制+廣泛仿單外使用</td>
+            <td>極廣</td>
+            <td>可</td>
+            <td>非強制</td>
+          </tr>
+          <tr>
+            <td><strong>日本</strong></td>
+            <td>正面表列(形式)</td>
+            <td>有限但實務廣泛</td>
+            <td>法規模糊但實務可</td>
+            <td>2.5% 藥局曾調劑</td>
+          </tr>
+          <tr class="row--highlight">
+            <td><strong>台灣</strong></td>
+            <td>正面表列 + 強制貼標 + 藥局中介</td>
+            <td>~701&ndash;732</td>
+            <td>不可</td>
+            <td>強制</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="takeaways">
+      <div class="takeaway">
+        <div class="takeaway__num"></div>
+        <div class="takeaway__text"><strong>美國伴侶動物「零禁藥」</strong> &mdash; AMDUCA(1994)立法確立:除非 FDA 明確禁止,獸醫師可使用任何人用藥品治療動物,前提為建立有效的獸醫-病患關係(VCPR)。</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway__num"></div>
+        <div class="takeaway__text"><strong>歐盟階梯制保障可及性</strong> &mdash; Regulation (EU) 2019/6 建立三階梯 cascade:優先使用核准動物用藥 &rarr; 其他國家核准動物用藥 &rarr; 人用藥品。確保在無專用動物藥時,獸醫仍有治療選項。</div>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway__num"></div>
+        <div class="takeaway__text"><strong>排擠條款全球獨有</strong> &mdash; 沒有任何其他國家規定「有動物用藥許可證時,必須刪除對應人用藥品」。此機制在全球獸醫藥事管理中前所未見。</div>
+      </div>
+    </div>
+
+    <hr class="hearing__divider">
+
+    <!-- =================================================
+         SECTION D: 各方立場一覽
+         ================================================= -->
+    <div class="section-label">
+      <span class="section-label__num">04</span>
+      <span class="section-label__text">Stakeholder Positions</span>
+    </div>
+
+    <h2 class="hearing__h2"><span class="num">&sect; 04</span>各方立場一覽</h2>
+
+    <div class="table-wrap">
+      <table class="stakeholder-table">
+        <thead>
+          <tr>
+            <th>利害關係人</th>
+            <th>立場與關注焦點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="stake-name">農業部</td>
+            <td>提出五項修正方案,同意延後實施。強調「公告制」可解決藥廠不願主動登錄的問題,但承認配套仍需時間完善。</td>
+          </tr>
+          <tr>
+            <td class="stake-name">食藥署</td>
+            <td>關注人用藥品流向管理與追溯系統。強調 GDP 規範不可放寬,藥品安全為底線。對藥局寄存機制持保留態度,需確保不違反藥事法。</td>
+          </tr>
+          <tr>
+            <td class="stake-name">藥師公會</td>
+            <td>堅持藥品調劑為藥師專業,反對獸醫師直接購藥繞過藥局。主張藥局在動物用藥供應鏈中的角色不可替代。</td>
+          </tr>
+          <tr>
+            <td class="stake-name">基層藥師</td>
+            <td>部分基層藥師坦言對動物用藥劑量不熟悉,承認藥局調劑動物處方的實務困難。與公會官方立場存在落差。</td>
+          </tr>
+          <tr>
+            <td class="stake-name">獸醫師全聯會</td>
+            <td>堅持負面表列、修正藥事法第 50 條為根本解方。Buprenorphine 缺藥事件為具體例證。支持延後但要求明確時間表與配套。</td>
+          </tr>
+          <tr>
+            <td class="stake-name">各地方公會</td>
+            <td>反映偏鄉用藥困境,宜蘭、花蓮、台東等地夜間急診無藥可用。要求寄存機制細節盡速定案,否則偏鄉獸醫將首當其衝。</td>
+          </tr>
+          <tr>
+            <td class="stake-name">製藥代理商</td>
+            <td>GDP 合規成本高,出貨給非藥局通路的法律風險不明確。多數藥商傾向觀望,參與率僅約 20%。需政府提供明確法律保障。</td>
+          </tr>
+          <tr>
+            <td class="stake-name">動物用藥工業公會</td>
+            <td>擔憂排擠條款被取消將衝擊動物用藥市場。主張應優先發展動物專用藥品,人用藥品僅為補充。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="hearing__divider">
+
+  </div><!-- /.hearing__inner -->
+</section>
+
+<!-- =====================================================
+     SECTION E: 風險分析 (dark background)
+     ===================================================== -->
+<section class="risk-section">
+  <div class="risk-inner">
+
+    <div class="section-label section-label--light">
+      <span class="section-label__num">05</span>
+      <span class="section-label__text">Risk Analysis</span>
+    </div>
+
+    <h2 class="hearing__h2"><span class="num">&sect; 05</span>風險分析</h2>
+
+    <p style="font-family: var(--serif); font-size: var(--step-1); line-height: 1.85; color: var(--mist-soft); margin-bottom: 40px;">
+      農業部五項修正表面上回應了各方訴求,但深入分析顯示,公告制僅解決六項核心阻力中的一項。以下是系統性風險評估。
+    </p>
+
+    <!-- 6 barriers table -->
+    <p style="font-family: var(--serif); font-size: var(--step-2); font-weight: 900; color: var(--paper); margin-bottom: 16px;">六項核心阻力 vs 公告制效力</p>
+
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>阻力項目</th>
+          <th>說明</th>
+          <th>公告制是否解決</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color: var(--paper);">藥廠不願登錄</td>
+          <td>品保、貼標、責任歸屬成本高</td>
+          <td class="status-resolved">已解決 (免登錄)</td>
+        </tr>
+        <tr>
+          <td style="color: var(--paper);">藥商拒絕出貨</td>
+          <td>GDP 合規 + 法律風險</td>
+          <td class="status-unresolved">未解決</td>
+        </tr>
+        <tr>
+          <td style="color: var(--paper);">藥局不願調劑</td>
+          <td>利潤低、不熟悉動物劑量</td>
+          <td class="status-unresolved">未解決</td>
+        </tr>
+        <tr>
+          <td style="color: var(--paper);">標籤標示負擔</td>
+          <td>逐瓶貼標耗時耗力</td>
+          <td class="status-unresolved">部分緩解</td>
+        </tr>
+        <tr>
+          <td style="color: var(--paper);">排擠條款</td>
+          <td>有動物用藥即刪人用品項</td>
+          <td class="status-unresolved">未解決</td>
+        </tr>
+        <tr>
+          <td style="color: var(--paper);">法律位階不足</td>
+          <td>管理辦法 vs 藥事法 &sect;50</td>
+          <td class="status-unresolved">未解決</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pharmacy track 4 problems -->
+    <p style="font-family: var(--serif); font-size: var(--step-2); font-weight: 900; color: var(--paper); margin: 48px 0 16px;">藥局軌道四大問題</p>
+
+    <div class="risk-card">
+      <div class="risk-card__label">Problem 01</div>
+      <div class="risk-card__body" style="color: var(--paper);">
+        <strong style="color: var(--paper);">調劑意願低</strong> &mdash; 動物處方利潤微薄,藥師對動物用藥劑量不熟悉,多數藥局不願承接。
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-card__label">Problem 02</div>
+      <div class="risk-card__body" style="color: var(--paper);">
+        <strong style="color: var(--paper);">地理可及性</strong> &mdash; 偏鄉夜間無藥局營業,急診動物無法即時取藥。寄存機制理論上解決此問題,但細節全未定義。
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-card__label">Problem 03</div>
+      <div class="risk-card__body" style="color: var(--paper);">
+        <strong style="color: var(--paper);">效率瓶頸</strong> &mdash; 手術中需要追加藥品時,無法即時從藥局取得。每次取藥需開立處方、傳送藥局、等待調劑,流程遠長於直接從院內藥櫃取用。
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-card__label">Problem 04</div>
+      <div class="risk-card__body" style="color: var(--paper);">
+        <strong style="color: var(--paper);">法律灰區</strong> &mdash; 寄存機制的藥品所有權歸屬、責任劃分、盤點義務均無法源依據,藥局與醫院雙方的法律風險不明確。
+      </div>
+    </div>
+
+    <!-- Consignment vacuum -->
+    <p style="font-family: var(--serif); font-size: var(--step-2); font-weight: 900; color: var(--paper); margin: 48px 0 16px;">寄存機制:九項全未定 &mdash; 制度真空</p>
+
+    <table class="vacuum-table">
+      <tbody>
+        <tr><td>1</td><td>藥品所有權歸屬(藥局 or 醫院)</td><td>未定</td></tr>
+        <tr><td>2</td><td>藥品損耗與過期責任</td><td>未定</td></tr>
+        <tr><td>3</td><td>盤點頻率與稽核機制</td><td>未定</td></tr>
+        <tr><td>4</td><td>藥品溫控儲存標準</td><td>未定</td></tr>
+        <tr><td>5</td><td>處方傳遞與紀錄方式</td><td>未定</td></tr>
+        <tr><td>6</td><td>管制藥品(如 Buprenorphine)能否寄存</td><td>未定</td></tr>
+        <tr><td>7</td><td>寄存藥局的地理範圍限制</td><td>未定</td></tr>
+        <tr><td>8</td><td>費用分攤機制(藥局服務費)</td><td>未定</td></tr>
+        <tr><td>9</td><td>違規罰則與爭議處理</td><td>未定</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Worst-case scenario -->
+    <div class="risk-highlight">
+      <div class="risk-highlight__text">
+        最嚴峻推估:藥商參與率維持 <em>20%</em><br>
+        實際可用藥品僅 <em>100&ndash;150 項</em><br>
+        台灣獸醫師可用藥品將被壓縮至<br>
+        <em>美國的十分之一以下</em>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION F: 待解決清單 + Disclaimer + Footer
+     ===================================================== -->
+<section class="hearing" style="padding-top: 0;">
+  <div class="hearing__inner">
+
+    <div class="section-label">
+      <span class="section-label__num">06</span>
+      <span class="section-label__text">Open Items</span>
+    </div>
+
+    <h2 class="hearing__h2" style="margin-top: 0;"><span class="num">&sect; 06</span>待解決清單</h2>
+
+    <p>以下為公聽會後仍待釐清、尚無結論的十一項關鍵議題。</p>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>藥事法第 50 條修正案</strong>:是否排入立法院委員會審議?時程?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>延後實施的確切日期</strong>:7/1 延後多久?新的上路日期為何?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>寄存機制九項細節</strong>:所有權、責任、盤點、溫控等規範何時公布?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>排擠條款存廢</strong>:有動物用藥即刪人用品項的機制是否修正?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>藥商出貨法律保障</strong>:GDP 框架下,藥商出貨給非藥局通路的免責條款何時制定?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>管制藥品供應鏈</strong>:Buprenorphine 等管制藥品的獸醫取得管道如何確保?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>偏鄉配套措施</strong>:無藥局地區的動物急診用藥如何解決?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>負面表列 vs 正面表列</strong>:是否有轉向負面表列的具體規劃與時間表?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>公告品項擴充機制</strong>:732 項之後,新藥品如何納入?流程與時程?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>標籤標示細則</strong>:放寬後的具體標示規範何時公告?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-item__box"></div>
+        <div class="check-item__text"><strong>跨部會協調機制</strong>:農業部、食藥署、疾管署之間的權責劃分與協調頻率?</div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer-bar">
+      本整理基於 AI 語音辨識逐字稿產出,部分專有名詞可能有辨識誤差,請以官方會議紀錄為準。
+    </div>
+
+    <a href="index.html" class="hearing__back" style="margin-top: 56px; margin-bottom: 0;">&larr; Back to Letter</a>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__title">vetgov.tw</div>
+      <p>獸醫用藥權修法推動聯盟</p>
+    </div>
+    <div class="footer__about">
+      <p>本站由獸醫用藥權修法推動聯盟與公民科技志工自發維護。不接受商業贊助、不嵌入廣告、不追蹤使用者。MIT 授權 · 歡迎 fork 追蹤其他公民議題。</p>
+      <p class="footer__disclaimer">本站不提供法律或獸醫專業建議。所有資訊以主管機關最新公告為準。AI 萃取事件會明確標示,可能有誤,請以原始連結為準。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -51,11 +51,20 @@ CREATE INDEX IF NOT EXISTS idx_events_tier ON events(tier);
 
 
 def _migrate(conn: sqlite3.Connection) -> None:
-    """Add new columns to existing DBs."""
+    """Add new columns to existing DBs.
+
+    SAFETY: table/column/default values are hardcoded below — never from user input.
+    DDL (ALTER TABLE) cannot use ? parameterization, so we use f-string with a
+    validated allowlist.
+    """
+    _ALLOWED_TABLES = {"raw_items", "events"}
+    _ALLOWED_COLUMNS = {"tier"}
     for table, column, default in [
         ("raw_items", "tier", "media"),
         ("events", "tier", "media"),
     ]:
+        assert table in _ALLOWED_TABLES, f"invalid table: {table}"
+        assert column in _ALLOWED_COLUMNS, f"invalid column: {column}"
         try:
             conn.execute(
                 f"ALTER TABLE {table} ADD COLUMN {column} TEXT DEFAULT '{default}'"
@@ -75,7 +84,11 @@ def connect(db_path: str | Path) -> sqlite3.Connection:
     return conn
 
 
-def insert_raw(conn: sqlite3.Connection, item, score) -> bool:
+def insert_raw(
+    conn: sqlite3.Connection,
+    item: "scraper.RawItem",  # noqa: F821 — avoid circular import
+    score: "classifier.RelevanceScore",  # noqa: F821
+) -> bool:
     """Insert a RawItem with its classifier score. Returns True if newly inserted."""
     try:
         conn.execute(

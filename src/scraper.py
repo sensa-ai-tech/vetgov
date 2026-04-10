@@ -35,9 +35,11 @@ def fetch_rss(
         )
         resp.raise_for_status()
         feed = feedparser.parse(resp.content)
-    except httpx.HTTPError:
+    except (httpx.HTTPError, httpx.TimeoutException) as e:
+        import sys
+        print(f"[WARN] scraper: {source_name}: {e}", file=sys.stderr)
         return
-        yield  # make generator
+        yield  # type: generator sentinel
 
     for entry in feed.entries:
         yield RawItem(
@@ -53,15 +55,20 @@ def fetch_rss(
 
 
 def fetch_html(url: str, timeout: int = 20) -> str:
-    """抓取單一 HTML 頁面，回傳純文字內容。"""
-    resp = httpx.get(
-        url,
-        timeout=timeout,
-        follow_redirects=True,
-        headers={"User-Agent": "VetDrugTracker/0.1 (+https://github.com/)"},
-    )
-    resp.raise_for_status()
-    return resp.text
+    """抓取單一 HTML 頁面，回傳純文字內容。失敗時回傳空字串。"""
+    try:
+        resp = httpx.get(
+            url,
+            timeout=timeout,
+            follow_redirects=True,
+            headers={"User-Agent": "VetGovTracker/0.2 (+https://vetgov.tw)"},
+        )
+        resp.raise_for_status()
+        return resp.text
+    except (httpx.HTTPError, httpx.TimeoutException) as e:
+        import sys
+        print(f"[WARN] scraper: fetch_html {url}: {e}", file=sys.stderr)
+        return ""
 
 
 def _clean(text: str) -> str:

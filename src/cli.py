@@ -36,12 +36,16 @@ def _load_config() -> dict:
 
 # ---------- commands ----------
 
-def cmd_init(args) -> None:
+def cmd_init(args: argparse.Namespace) -> None:
     conn = storage.connect(DB_PATH)
     print(f"[OK] DB ready: {DB_PATH}")
 
     if args.with_seed and SEED_PATH.exists():
-        seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
+        try:
+            seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            print(f"[ERR] Failed to parse {SEED_PATH}: {e}", file=sys.stderr)
+            return
         added = 0
         for e in seed.get("events", []):
             if storage.insert_event(

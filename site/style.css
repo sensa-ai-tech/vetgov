@@ -1176,6 +1176,9 @@ strong { font-weight: 700; color: var(--ink); }
 .timeline-item.imp-4::before { background: var(--blood-soft); border-color: var(--blood); }
 .timeline-item.imp-3::before { background: var(--gold); border-color: var(--gold-light); }
 
+.ti-meta { grid-column: 1; grid-row: 1 / -1; }
+.ti-title, .ti-summary, .ti-stakeholders, .ti-sources { grid-column: 2; }
+
 .ti-meta {
   font-family: var(--mono);
   font-size: 12px;

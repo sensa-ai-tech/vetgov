@@ -195,7 +195,11 @@ body { font-family: 'Noto Sans TC', sans-serif; background: var(--paper); color:
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
 }
-@media (max-width: 640px) { .compare-wide { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .compare-wide { grid-template-columns: 1fr; }
+  .flow-steps { flex-direction: column; align-items: stretch; }
+  .fa { text-align: center; transform: rotate(90deg); font-size: 0.8rem; }
+}
 .cmp-card {
   border-radius: 12px;
   padding: 1.8rem;
@@ -372,6 +376,28 @@ body { font-family: 'Noto Sans TC', sans-serif; background: var(--paper); color:
   text-align: left;
 }
 @media (max-width: 500px) { .end-actions { grid-template-columns: 1fr; } }
+
+/* ── Mobile responsive ── */
+@media (max-width: 720px) {
+  html { font-size: 16px; }
+  .hero { padding: 2.5rem 1.2rem 2rem; }
+  .hero h1 { font-size: 1.7rem; }
+  .hero-deck { font-size: 1rem; }
+  .article { padding: 0 1.2rem; }
+  .article p { font-size: 0.95rem; }
+  .section-head { padding: 0 1.2rem 1.2rem; }
+  .section-head h2 { font-size: 1.3rem; }
+  .pullquote { padding: 0 1.2rem; }
+  .pullquote p { font-size: 1.1rem !important; }
+  .compare-wide { padding: 0 1.2rem; }
+  .flow-panel { padding: 2.5rem 1.2rem; }
+  .flow-panel h2 { font-size: 1.2rem; }
+  .timeline { padding: 0 1.2rem; }
+  .drug-case { margin-left: 0; margin-right: 0; }
+  .law-box { margin-left: 0; margin-right: 0; }
+  .end-cta { padding: 2.5rem 1.2rem; }
+  .end-cta h2 { font-size: 1.3rem; }
+}
 .end-action {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);

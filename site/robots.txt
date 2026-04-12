@@ -1,5 +1,5 @@
 # vetgov.tw · robots.txt
-# 獸醫用藥權修法推動聯盟
+# 獸醫用藥權修法事件簿
 
 User-agent: *
 Allow: /

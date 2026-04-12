@@ -1011,10 +1011,10 @@ strong { font-weight: 700; color: var(--ink); }
   grid-column: span 3;
 }
 .voice--07::before { background: var(--gold); }
-.voice--07 h4 { color: var(--paper); font-size: var(--step-4); }
-.voice--07 .voice__hashtag { color: var(--gold); }
-.voice--07 p { color: var(--paper-dark); font-size: var(--step-1); line-height: 1.85; }
-.voice--07 p strong {
+.voice.voice--07 h4 { color: var(--paper); font-size: var(--step-4); }
+.voice.voice--07 .voice__hashtag { color: var(--gold); }
+.voice.voice--07 p { color: var(--paper-dark); font-size: var(--step-1); line-height: 1.85; }
+.voice.voice--07 p strong {
   color: var(--gold-light);
   background: linear-gradient(180deg, transparent 60%, rgba(201, 163, 74, 0.25) 60%);
 }

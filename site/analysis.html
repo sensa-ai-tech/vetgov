@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深度解析：一條法規，卡住一千七百家動物醫院的藥 · vetgov.tw</title>
+<meta name="description" content="台灣獸醫師用藥困境完整解析：藥事法第 50 條的結構缺陷、國際比較、公聽會最新進展、具體藥品斷貨案例。">
+<meta property="og:title" content="深度解析：一條法規，卡住一千七百家動物醫院的藥 · vetgov.tw">
+<meta property="og:description" content="獸醫師合法使用、違法取得。十三年的畸形法源，八成藥品來自人用藥，制度卻不讓獸醫師買。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vetgov.tw/analysis">
+<meta property="og:site_name" content="獸醫用藥權修法事件簿 · vetgov.tw">
+<meta property="og:image" content="https://vetgov.tw/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://vetgov.tw/analysis">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #191919;
+  --paper: #faf8f5;
+  --cream: #f2ede6;
+  --rust: #b5451b;
+  --rust-pale: #fceee8;
+  --teal: #1a6b5a;
+  --teal-pale: #e3f0ec;
+  --slate: #64605a;
+  --rule: #d8d2c9;
+  --highlight: #fff7e0;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 17px; }
+body { font-family: 'Noto Sans TC', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.9; -webkit-font-smoothing: antialiased; }
+
+/* ── Masthead ── */
+.masthead {
+  text-align: center;
+  padding: 2rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+.masthead-brand {
+  font-family: 'Source Serif 4', 'Noto Serif TC', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* ── Hero ── */
+.hero {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+.hero-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--rust);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+.hero-deck {
+  font-family: 'Source Serif 4', 'Noto Serif TC', serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  color: var(--slate);
+  line-height: 1.75;
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+.hero-meta {
+  font-size: 0.78rem;
+  color: var(--slate);
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  display: inline-block;
+}
+
+/* ── Article body ── */
+.article { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+.article p {
+  font-family: 'Source Serif 4', 'Noto Serif TC', serif;
+  font-size: 1.05rem;
+  margin-bottom: 1.4rem;
+  color: #2a2725;
+}
+.article p strong { color: var(--ink); font-weight: 700; }
+
+/* ── Section breaks ── */
+.section-break {
+  text-align: center;
+  padding: 3rem 0 2.5rem;
+}
+.section-break::before {
+  content: '◆ ◆ ◆';
+  font-size: 0.6rem;
+  letter-spacing: 0.8em;
+  color: var(--rule);
+}
+
+.section-head {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1.5rem;
+}
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--rust);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.section-head h2 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  line-height: 1.3;
+}
+
+/* ── Pull quote ── */
+.pullquote {
+  max-width: 600px;
+  margin: 2.5rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+.pullquote p {
+  font-family: 'Noto Serif TC', serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 700;
+  line-height: 1.65;
+  color: var(--ink) !important;
+  position: relative;
+}
+.pullquote p::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--rust);
+  margin: 0 auto 1.2rem;
+}
+.pullquote .attr {
+  font-family: 'Noto Sans TC', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 400;
+  color: var(--slate) !important;
+  margin-top: 0.8rem;
+}
+
+/* ── Law box ── */
+.law-box {
+  background: var(--cream);
+  border-left: 3px solid var(--rust);
+  border-radius: 0 8px 8px 0;
+  padding: 1.3rem 1.5rem;
+  margin: 1.8rem 0;
+}
+.law-box p {
+  font-family: 'Noto Sans TC', sans-serif !important;
+  font-size: 0.9rem !important;
+  color: var(--slate) !important;
+  line-height: 1.75 !important;
+  margin-bottom: 0.5rem !important;
+}
+.law-box p:last-child { margin-bottom: 0 !important; }
+.law-box strong { color: var(--ink); }
+.law-box code {
+  background: rgba(181,69,27,0.1);
+  color: var(--rust);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ── Compare cards (wide) ── */
+.compare-wide {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+@media (max-width: 640px) { .compare-wide { grid-template-columns: 1fr; } }
+.cmp-card {
+  border-radius: 12px;
+  padding: 1.8rem;
+}
+.cmp-card.intl { background: var(--teal-pale); border: 1px solid rgba(26,107,90,0.2); }
+.cmp-card.tw { background: var(--rust-pale); border: 1px solid rgba(181,69,27,0.2); }
+.cmp-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+.cmp-card.intl .cmp-label { color: var(--teal); }
+.cmp-card.tw .cmp-label { color: var(--rust); }
+.cmp-card h3 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.cmp-card p {
+  font-family: 'Noto Sans TC', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: var(--slate) !important;
+  line-height: 1.7 !important;
+}
+
+/* ── Flow diagram (dark) ── */
+.flow-panel {
+  background: var(--ink);
+  color: #fff;
+  padding: 3.5rem 1.5rem;
+  margin: 2.5rem 0;
+}
+.flow-inner { max-width: 760px; margin: 0 auto; }
+.flow-panel h2 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.flow-panel .deck {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2rem;
+}
+.flow-track { margin-bottom: 1.8rem; }
+.flow-track-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0.6rem;
+}
+.flow-steps { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+.fs {
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.75);
+}
+.fs.ok { border-color: var(--teal); color: #8ccdb8; background: rgba(26,107,90,0.12); }
+.fs.warn { border-color: #b59a1a; color: #e6d06a; background: rgba(181,154,26,0.1); }
+.fs.bad { border-color: var(--rust); color: #e8a595; background: rgba(181,69,27,0.1); }
+.fa { color: rgba(255,255,255,0.2); font-size: 1rem; }
+.flow-note {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.38);
+  margin-top: 0.4rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid rgba(255,255,255,0.1);
+  line-height: 1.65;
+}
+.flow-pct {
+  display: inline-block;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  margin-right: 0.5rem;
+}
+
+/* ── Drug case ── */
+.drug-case {
+  background: var(--rust-pale);
+  border-left: 3px solid var(--rust);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.5rem 0;
+}
+.drug-case p {
+  font-family: 'Noto Sans TC', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: #4a3f35 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+.drug-tag {
+  display: inline-block;
+  background: rgba(181,69,27,0.1);
+  border: 1px solid rgba(181,69,27,0.2);
+  padding: 0.05rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--rust);
+}
+
+/* ── Timeline ── */
+.timeline {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+.tl-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+.tl-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+.tl-dot.done { background: var(--teal); }
+.tl-dot.wip { background: #c4a20a; }
+.tl-dot.todo { background: var(--rust); }
+.tl-content h4 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+.tl-content p {
+  font-family: 'Noto Sans TC', sans-serif !important;
+  font-size: 0.85rem !important;
+  color: var(--slate) !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── End CTA ── */
+.end-cta {
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.end-cta h2 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.end-cta p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.8;
+}
+.end-actions {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+@media (max-width: 500px) { .end-actions { grid-template-columns: 1fr; } }
+.end-action {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+.end-action h4 { font-size: 0.9rem; margin-bottom: 0.3rem; }
+.end-action p { font-size: 0.8rem !important; color: rgba(255,255,255,0.45) !important; text-align: left !important; margin: 0 !important; line-height: 1.6 !important; }
+
+.footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.72rem;
+  color: var(--slate);
+  border-top: 1px solid var(--rule);
+}
+</style>
+</head>
+<body>
+
+<link rel="stylesheet" href="style.css">
+<style>.nav { position: relative; }</style>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <span class="nav__mark">vetgov.tw</span>
+      <span class="nav__sub">獸醫用藥權修法事件簿</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#manifesto">聲明</a>
+      <a href="index.html#demands">問題</a>
+      <a href="index.html#voices">處境</a>
+      <a href="data-chart.html" target="_blank" rel="noopener">數據</a>
+      <a href="index.html#timeline">時間線</a>
+      <a href="analysis.html" class="nav__cta nav__cta--gold">深度解析</a>
+      <a href="hearing-0410.html" class="nav__cta">4/10 速報</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-kicker">法規分析</div>
+  <h1>一條法規，卡住一千七百家動物醫院的藥</h1>
+  <p class="hero-deck">動物生病需要的藥，八成跟人類一樣。全世界的獸醫師都能合法取得這些藥品來治療動物——除了台灣。不是藥不夠，是法規不讓獸醫師買。這個問題已經存在超過十三年。</p>
+  <div class="hero-meta">2026年4月 ・ 基於4/10公聽會紀錄及公開法規資料整理</div>
+</section>
+
+<!-- ═══ PART 1: 問題根源 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 1</div>
+  <h2>問題的根源：兩部法律互相矛盾</h2>
+</div>
+<div class="article">
+  <p>藥物在上市給人類使用之前，必須先通過動物實驗——這是全世界藥品開發的標準流程。因此，人用藥品用在動物身上，在藥理學上本來就有科學基礎。全球的獸醫臨床實務中，約有八成的治療藥物來自人用藥品。這不是偷工減料，而是國際慣例。</p>
+  <p>但在台灣，獸醫師要取得這些藥品，會撞上一堵法律的牆。</p>
+
+  <div class="law-box">
+    <p><strong>《藥事法》第50條但書第二款</strong>規定，<code>醫院、診所、學術研究機構</code>可以購買處方藥品。但這份名單裡<strong>沒有獸醫診療機構</strong>。藥商把人用藥品賣給動物醫院，依藥事法即為違法。</p>
+  </div>
+
+  <p>與此同時，另一部法律——<strong>《動物保護法》第4條</strong>——又明確授權：動物用藥不足時，獸醫師可以使用人用藥品來治療犬貓和非經濟動物。</p>
+  <p>一部法律說可以用，另一部法律說不能買。獸醫師被夾在中間：<strong>合法使用、違法取得</strong>。</p>
+  <p>這個矛盾從民國102年就被正式提出，至今超過十三年。過去多年，藥商在「心照不宣」的默契下供貨給動物醫院，主管機關睜一隻眼閉一隻眼。直到近年食藥署加強藥品流向稽查，藥商因為怕被罰開始停止供貨，問題才真正浮上水面。</p>
+</div>
+
+<!-- ═══ PART 2: 國際比較 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 2</div>
+  <h2>全世界都能做的事，為什麼台灣做不到</h2>
+</div>
+<div class="article">
+  <p>這不是台灣獸醫師的專業不夠，而是制度設計從根本上就不同。</p>
+</div>
+
+<div class="compare-wide">
+  <div class="cmp-card intl">
+    <div class="cmp-label">🌍 美國・歐盟・日本・加拿大</div>
+    <h3>獸醫師是藥品的合法購買者</h3>
+    <p>日本《藥機法》直接將獸醫師和動物診療施設與醫師、醫院並列為合法購藥對象。美國FDA統一管理人藥和動物藥，1994年立法保障獸醫師的「標籤外使用」權限。加拿大採負面表列，獸醫師可用1,500至2,000種人用藥品。獸醫師被視為有處方和調劑能力的專業人員。</p>
+  </div>
+  <div class="cmp-card tw">
+    <div class="cmp-label">🇹🇼 台灣</div>
+    <h3>獸醫師連買藥的資格都沒有</h3>
+    <p>人用藥歸衛福部、動物藥歸農業部，兩套法規互不相通。藥事法把獸醫院排除在藥品銷售通路之外。用「正面表列」逐項公告可用藥品，目前732項，且每新增一項都要經過行政程序。藥品要經過「貼標」轉換法律身分，才能合法進入獸醫院。</p>
+  </div>
+</div>
+
+<div class="article">
+  <p>差異的核心在於：<strong>國外先承認獸醫師的專業資格，在這個基礎上設計管理制度。台灣是先把門關上，再來一個一個討論要不要開縫。</strong></p>
+  <p>而且台灣的問題不只是「門沒開」，還有一個更深層的結構問題——<strong>人用藥和動物藥分屬兩個不同的政府部門管轄</strong>。美國的FDA同時管人藥和動物藥，不存在「藥品要轉換身分」這種事。台灣人藥歸衛福部食藥署、動物藥歸農業部，兩個部會各有各的法規和利益團體，一顆藥要從人藥的世界走進動物醫院，必須經過一連串行政轉換。</p>
+</div>
+
+<!-- ═══ PART 3: 三種藥品身分 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 3</div>
+  <h2>同一顆藥，在台灣有三種法律身分</h2>
+</div>
+<div class="article">
+  <p>這是最讓人困惑的部分。在台灣，獸醫師手上的藥品不是一個統一的類別，而是被法規切成三種完全不同的法律身分，每一種的管轄機關、取得方式和適用法規都不一樣。</p>
+  <p><strong>第一種：動物用藥品。</strong>從一開始就以動物為對象開發、由農業部核發許可證的藥品。例如犬貓疫苗、除蚤滴劑、動物專用麻醉藥。獸醫院可以直接購買，完全合法，沒有任何爭議。但問題是——品項非常有限，大約只能覆蓋兩成的臨床需求。台灣的動物用藥市場太小，藥廠沒有動力為動物開發專用藥品。</p>
+  <p><strong>第二種：動物保護用藥（動保用藥）。</strong>本質上是人用藥品，但經過農業部公告、藥商完成「貼標」程序後，法律身分從「人藥」轉換為「動保用藥」，主管機關從衛福部變成農業部。貼標的功能不是藥品安全，而是<strong>管轄權的轉換</strong>——確保藥品進入獸醫院後歸農業部管理，不被食藥署直轄。目前公告品項732種。</p>
+  <p><strong>第三種：未在公告清單上的人用藥品。</strong>獸醫師臨床上需要、但還沒被納入公告清單的藥品，或是因為「同藥排擠」條款而被刪除的品項。法律上它仍然是純粹的人藥，獸醫院不能直接買，需要飼主拿獸醫師開的「購藥證明」自己去藥局購買，再帶回動物醫院。</p>
+  <p>在美國，獸醫師不需要區分這些身分。不管是動物專用藥還是人用藥，都在FDA同一套法律框架下管理，獸醫師依專業判斷開藥、調劑、給藥，流程跟人醫一樣自然。<strong>台灣需要區分三種身分，本身就是制度扭曲的直接證據。</strong></p>
+</div>
+
+<!-- ═══ PART 4: 藥品取得流向 ═══ -->
+<div class="flow-panel">
+  <div class="flow-inner">
+    <div class="section-label" style="color:rgba(255,255,255,0.4);">Part 4</div>
+    <h2>藥品怎麼進到動物醫院</h2>
+    <p class="deck">在現行制度下，藥品進入動物醫院有五條途徑。每一條的法律依據、行政成本和臨床可行性都不同。</p>
+
+    <div class="flow-track">
+      <div class="flow-track-label"><span class="flow-pct">~20%</span>動物用藥品 ─ 唯一完全沒有爭議的途徑</div>
+      <div class="flow-steps">
+        <span class="fs">動物藥廠</span><span class="fa">→</span>
+        <span class="fs">動物藥品販賣業者</span><span class="fa">→</span>
+        <span class="fs ok">✓ 獸醫院直接購買</span>
+      </div>
+      <div class="flow-note">疫苗、驅蟲藥等。品項有限，只覆蓋約兩成臨床需求。</div>
+    </div>
+
+    <div class="flow-track">
+      <div class="flow-track-label"><span class="flow-pct">~55%</span>第一軌：公告品項貼標直供（理想狀態）</div>
+      <div class="flow-steps">
+        <span class="fs">人用藥廠</span><span class="fa">→</span>
+        <span class="fs">藥商完成貼標</span><span class="fa">→</span>
+        <span class="fs ok">✓ 直接賣給獸醫院</span>
+      </div>
+      <div class="flow-note">4/10公聽會後改為公告制（免登錄），簡化了流程。但實際佔比取決於藥商的貼標配合度。</div>
+    </div>
+
+    <div class="flow-track">
+      <div class="flow-track-label"><span class="flow-pct">~15%</span>第二軌：飼主至藥局取藥</div>
+      <div class="flow-steps">
+        <span class="fs">藥商</span><span class="fa">→</span>
+        <span class="fs">藥局</span><span class="fa">→</span>
+        <span class="fs bad">⚠ 飼主持購藥證明購買</span><span class="fa">→</span>
+        <span class="fs bad">⚠ 帶回獸醫院</span>
+      </div>
+      <div class="flow-note">飼主變成藥品的物流工具。半夜急診時藥局沒開門，飼主買不到藥，動物只能等。偏鄉地區最近的藥局可能在兩小時車程外。</div>
+    </div>
+
+    <div class="flow-track">
+      <div class="flow-track-label"><span class="flow-pct">~7%</span>寄存機制 ─ 急診的生命線</div>
+      <div class="flow-steps">
+        <span class="fs">藥局</span><span class="fa">→</span>
+        <span class="fs ok">✓ 預先寄存在獸醫院</span><span class="fa">→</span>
+        <span class="fs">急診使用</span><span class="fa">→</span>
+        <span class="fs warn">事後補購藥證明</span>
+      </div>
+      <div class="flow-note">解決夜間急診問題的過渡方案。藥品先到位、文件後補。操作規範仍在協商中。</div>
+    </div>
+
+    <div class="flow-track">
+      <div class="flow-track-label"><span class="flow-pct">~3%</span>專案進口</div>
+      <div class="flow-steps">
+        <span class="fs">國外藥廠</span><span class="fa">→</span>
+        <span class="fs">獸醫師公會申請進口</span><span class="fa">→</span>
+        <span class="fs ok">✓ 儲備調度</span>
+      </div>
+      <div class="flow-note">國內完全沒有的藥品。量不大但不可或缺。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PART 5: 具體案例 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 5</div>
+  <h2>不是抽象的法律問題——是動物的命</h2>
+</div>
+<div class="article">
+  <p>法規的缺陷不是學術討論，它每天都在影響真實的動物和飼主。以下是幾個具體案例：</p>
+
+  <div class="drug-case">
+    <p><strong>案例一：止痛藥全台斷貨。</strong><span class="drug-tag">Buprenorphine</span>（丁基原啡因）是犬貓疼痛管理的關鍵藥物。因為「同藥排擠」條款——同成分有動物用藥版本後，人用版本就從清單上刪除——動物用藥廠低估需求、人用版遭下架，導致全台獸醫師買不到這個藥。獸醫師全聯會為此緊急處理了200至300件專案進口，才勉強撐過危機。</p>
+  </div>
+
+  <div class="drug-case">
+    <p><strong>案例二：抗生素劑型不合。</strong><span class="drug-tag">Cephalexin</span>（頭孢氨芐）是獸醫臨床最常用的抗生素之一。台灣有動物版的 cephalexin，但只有口嚼錠——貓咪根本不吃。獸醫師需要膠囊或口服液，但因為「已有動物用藥」，人用版的不同劑型就被從清單刪除。同成分不等於同劑型，動物用藥有許可證不代表它在臨床上真的能用。</p>
+  </div>
+
+  <div class="drug-case">
+    <p><strong>案例三：半夜急診沒有藥。</strong>宜蘭縣獸醫師反映：夜間急診需要 <span class="drug-tag">Mannitol</span>（甘露醇，腦壓急救用）或利尿劑時，全部藥局都關門了。偏鄉地區只有一間藥局甚至沒有，最近的可能在兩小時車程外。</p>
+  </div>
+
+  <div class="drug-case">
+    <p><strong>案例四：基本用品也買不到。</strong>刷手液、碘點造影劑、<span class="drug-tag">胰島素</span>——這些不是什麼特殊藥品，但因為不在公告清單上或受到同藥排擠影響，藥商直接拒絕出貨給動物醫院。新制還沒上路，就已經有藥商因為怕違法而提前停止供貨。</p>
+  </div>
+</div>
+
+<div class="pullquote">
+  <p>獸醫師面對的不是「能不能治」的問題，而是「有藥卻不能合法拿到」的困境。</p>
+</div>
+
+<!-- ═══ PART 6: 最新進展 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 6</div>
+  <h2>4/10公聽會：十三年來最大的一步</h2>
+</div>
+<div class="article">
+  <p>2026年4月10日，農業部舉行「人用藥品用於犬貓及非經濟動物使用管理辦法」修正討論會議。農業部次長主持，獸醫師公會、藥師公會、製藥業者、食藥署等各方代表出席。會議取得了幾項重要共識：</p>
+</div>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-dot done"></div><div class="tl-content"><h4>登錄制改為公告制（免登錄）</h4><p>最大的突破。過去兩年藥商需逐案向防檢署申請登錄，僅144項完成。改為公告制後，732項公告品項藥商只需貼標即可出貨，不需再走登錄程序。</p></div></div>
+  <div class="tl-item"><div class="tl-dot done"></div><div class="tl-content"><h4>7/1延後實施</h4><p>九成與會者支持延後。決議：配套未完備前不實施，確保不造成混亂。食藥署同步發函藥商：過渡期間供貨合法。</p></div></div>
+  <div class="tl-item"><div class="tl-dot done"></div><div class="tl-content"><h4>貼標標準大幅放寬</h4><p>不需在GMP藥廠內進行，可在藥商或藥局端完成。醫用氣體改吊牌、注射劑最小單位免標示。</p></div></div>
+  <div class="tl-item"><div class="tl-dot done"></div><div class="tl-content"><h4>專案進口機制建立</h4><p>獸醫師公會可作為進口主體，建立院際間緊急藥品調度機制。</p></div></div>
+  <div class="tl-item"><div class="tl-dot wip"></div><div class="tl-content"><h4>寄存機制——方向共識，細節協商中</h4><p>參考人醫護理站模式，藥局可將藥品寄存在動物醫院。備藥量、核銷時效、適用範圍仍在討論。</p></div></div>
+  <div class="tl-item"><div class="tl-dot todo"></div><div class="tl-content"><h4>同藥排擠條款——尚未解決</h4><p>多位獸醫師要求：即使有動物用藥版本，也應保留不同劑型的人用藥取得管道。</p></div></div>
+  <div class="tl-item"><div class="tl-dot todo"></div><div class="tl-content"><h4>正面表列朝負面表列——長期目標</h4><p>防檢署坦言「可能又是下一個10年」。獸醫界提出替代路徑：修獸醫師法賦予標籤外使用權限。</p></div></div>
+</div>
+<div class="article">
+  <p>這些成果來之不易，但必須看到一個事實：<strong>這些改進全部是行政命令層級的調整，不是法律的修正。</strong>行政命令可以被主管機關片面修改或廢止，不需要經過立法院。政策風向一變、主管機關換人，這些好不容易爭取到的改善都可能倒退。</p>
+  <p>而且正面表列的先天限制仍然存在：只要有新藥上市、有新的臨床需求出現，就要重新走開會、審查、通過表列的行政程序，藥品才能進入可用清單。藥品開發的速度永遠快於行政流程，正面表列永遠落後於臨床需求。</p>
+</div>
+
+<!-- ═══ PART 7: 為什麼這麼難改 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 7</div>
+  <h2>為什麼改了十三年還改不好</h2>
+</div>
+<div class="article">
+  <p>看到這裡，很多人會問：問題這麼明顯，為什麼不修法？答案涉及台灣藥品管理體系的深層結構。</p>
+  <p><strong>第一，雙頭馬車的管轄架構。</strong>台灣的人用藥品歸衛福部食藥署管，動物用藥品歸農業部管。同一顆藥，如果要從「人藥」的世界進入動物醫院，就牽涉到兩個部會之間的權力邊界。現在的貼標制度，本質上就是一個管轄權轉移的機制——把藥品從食藥署的管轄轉到農業部的管轄。在美國，FDA同時管人藥和動物藥，根本不存在這個問題。</p>
+  <p><strong>第二，藥事法與醫藥分業制度的糾纏。</strong>台灣的藥事法不只是一部藥品管理法，它背後綁著整套醫藥分業的制度設計——藥師的調劑權、藥事服務費、藥品流通管控。藥師公會擔心：如果為獸醫院開了購藥的通路，就等於在醫藥分業的牆上開了一個口子。這個擔憂讓修法的政治阻力倍增。</p>
+  <p><strong>第三，主管機關態度保守。</strong>獸醫界反映：主管機關的長官在過去多年的協商中態度強硬。光是讓人用藥品能夠換標做動保用藥，就爭取了超過十年才慢慢放行。對於直接修改藥事法，主管機關的態度可想而知。</p>
+  <p><strong>第四，獸醫界自身的兩難。</strong>修藥事法第50條，理論上可以讓獸醫院直接買藥。但獸醫界擔心：如果修法設計不夠精確，食藥署可能藉此主張對獸醫院的管轄權，用人醫的規範標準來稽查動物醫院。獸醫師的磨粉分裝被認定為「擅自分裝藥品」、藥品儲存被要求比照人醫標準——這些不合理的後果，反而比現在更糟。所以獸醫界在「爭取購藥權」和「避免被不合理納管」之間，一直在尋找平衡。</p>
+</div>
+<div class="pullquote">
+  <p>國外不是不管制，而是管制的起點不同——先承認獸醫師的專業資格，再在這個基礎上設計管理制度。</p>
+</div>
+
+<!-- ═══ PART 8: 解方 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 8</div>
+  <h2>解方：需要法律層級的改革</h2>
+</div>
+<div class="article">
+  <p>現行的公告制和貼標方案，是獸醫界在主管機關態度強硬的政治現實下爭取到的最大空間。短期內它能讓臨床端運作，但結構性的問題沒有解決。長期來看，需要在法律層級建立獸醫師用藥權的保障。</p>
+  <p>目前獸醫界和法律界討論的方向，大致有三條可以並行的路徑：</p>
+  <p><strong>修改《獸醫師法》</strong>——在獸醫師法中明確賦予獸醫師對人用藥品的處方權、調劑權和標籤外使用（Extra-label use）權限。這是農業部主管的法律，修法阻力最小。標籤外使用的立法可以實質上達到負面表列的效果，讓獸醫師不再受限於正面表列的品項清單。美國1994年就已經立法保障這個權利。</p>
+  <p><strong>修改《動物保護法》第4條</strong>——把目前的「經公告之人用藥物類別」改為「除公告禁止品項外不受限制」，在法律層級實現負面表列。同時寫入排除條款，明確獸醫院內的藥品管理不適用藥事法的規範。</p>
+  <p><strong>修改《藥事法》第50條</strong>——這是效果最直接的路徑：在但書中增列獸醫診療機構為合法購藥對象，就像日本《藥機法》直接把獸醫師和動物診療施設寫進去一樣。同時需要新增排除條款，確保獸醫院不會因此被食藥署以人醫標準納管。這條路阻力最大，但也最根本。</p>
+  <p>這三條路不互斥，可以同時推動。先通過的就先適用，形成多層保護。獸醫師的用藥權不應該建立在行政命令這種可以隨時被修改的脆弱基礎上。</p>
+</div>
+
+<!-- ═══ PART 9: 修法的擔憂與倡議 ═══ -->
+<div class="section-break"></div>
+<div class="section-head">
+  <div class="section-label">Part 9</div>
+  <h2>修法的擔憂，與我們不能再迴避的現實</h2>
+</div>
+<div class="article">
+  <p>修法是正確的方向，但不是沒有風險。獸醫界內部、主管機關、藥師公會各有各的擔憂，這些擔憂不該被忽視——它們恰恰說明了為什麼這件事需要被更多人關注。</p>
+
+  <p><strong>擔憂一：修了藥事法，會不會反而讓獸醫院被食藥署管？</strong></p>
+  <p>這是獸醫界最核心的恐懼——但恐懼的重點常常被誤解。獸醫師不怕被管理，怕的是被用錯誤的方式管理，反而加重基層單位藥物取得的難度。</p>
+  <p>台灣的藥事法不只是一部藥品管理法，它高度與人類的全民健保體制綁定。法條內部的設計——藥師調劑權、處方箋格式、藥價基準、藥事服務費、醫藥分業的分工架構——全部是建立在人醫體制之上。處方箋要填病人的身分證字號和健保卡號、藥品定價跟著健保藥價走、調劑紀錄要跟健保申報系統對接——這些對獸醫院來說完全是南轅北轍的事。動物沒有身分證、沒有健保卡、獸醫醫療是自由市場定價。如果獸醫院被納入藥事法體系後，食藥署依法要求比照人醫的管理標準，這套為健保設計的規範架構硬套在獸醫院上，不但無法運作，反而會製造出一堆新的行政障礙，讓藥品取得變得更困難。</p>
+  <p>具體來說：獸醫師在臨床上常態性地將人用藥品磨粉、分裝、調整劑量以適應不同體型的動物，這在藥事法框架下可能被認定為「擅自分裝藥品」而開罰。藥品儲存如果被要求比照人醫標準稽查，大多數動物醫院的現行作業方式都無法符合。藥事法的罰則動輒數萬到數十萬，甚至涉及刑事責任——這個代價，沒有任何一家動物醫院承擔得起。</p>
+  <p>這個擔憂是真實的，但並不是無解的。法律界的分析指出：獸醫師在現行法規下本來就不是「藥事人員」，動物醫院也不是「藥事作業處所」，修改第50條但書不等於被整部藥事法納管。而且只要在修法時加入明確的排除條款——在法條裡就寫死「獸醫診療機構購入之藥品，其機構內之管理不適用本法關於醫療機構、藥事人員及醫藥分業之規定」——行政機關就沒有自由解釋的空間。關鍵在於修法的立法技術必須精確，不能留下模糊地帶。</p>
+
+  <p><strong>擔憂二：主管機關會同意嗎？</strong></p>
+  <p>坦白說，短期內很難。獸醫界多年來與主管機關協商的經驗是：<strong>態度強硬、步調保守</strong>。光是讓人用藥品可以貼標轉為動保用藥，從民國102年正式提出到113年管理辦法發布，花了超過十年。改正面表列為負面表列？防檢署在公聽會上公開表示「可能又是下一個10年」。修藥事法第50條？衛福部把藥事法視為管轄藥品市場的核心法規，在上面開任何口子都涉及食藥署的權力邊界——這不是法律技術問題，是官僚體系的權力結構問題。</p>
+  <p>但「主管機關態度強硬」不應該成為不推動修法的理由，而應該成為社會需要更大力關注的理由。行政機關的職責是執行法律、服務公共利益，不是固守既有的管轄版圖。當一套制度讓全台一千七百多家動物醫院和四千多位臨床獸醫師陷入「合法使用、違法取得」的荒謬困境，讓動物在急診時可能因為買不到藥而失去生命——這套制度就需要被改變。行政機關不願意動，那就由立法院來推動。</p>
+
+  <p><strong>擔憂三：藥師公會會全力反對？</strong></p>
+  <p>藥師公會過去確實對獸醫師直接購藥持反對立場，擔心這會在醫藥分業的制度上開先例。但必須說清楚：獸醫師取得人用藥品來治療動物，跟人類的醫藥分業是完全不同的事。國際上沒有任何一個國家認為獸醫師調劑藥品會威脅人類的醫藥分業。事實上，4/10公聽會上藥師公會全聯會已主動提出寄存機制方案，基層藥師協會也表示願意推動「友善寵物藥局」。這不是不可溝通的對立，而是需要在合理的制度設計下找到共存的方式。</p>
+
+  <p><strong>擔憂四：藥品流向會不會失控？</strong></p>
+  <p>這是食藥署和藥師公會最常提出的顧慮。回應也很直接：合理的流向管理，獸醫界完全願意接受。藥商出貨給獸醫院時在現有系統中申報流向，食藥署從藥商端即可追蹤。獸醫院內部建立藥品購入和使用紀錄，由農業部訂定格式並稽核。法律中明文禁止獸醫院將人用藥品轉售或移作人體使用。管制藥品維持現行獨立的申報體系。這套管理架構的邏輯是「進門前歸衛福部管、進門後歸農業部管」，兩個機關各管各的階段，不重疊也不衝突。流向管理不是問題——問題是不能用「流向管理」當藉口，去維持一套從根本上就不合理的制度。</p>
+</div>
+
+<div class="pullquote">
+  <p>當制度讓獸醫師必須在「守法」和「救命」之間做選擇，需要改變的不是獸醫師，是制度。</p>
+</div>
+
+<div class="article">
+  <p><strong>這不只是獸醫師的困境，更是台灣動物醫療產業能不能正常發展的問題。</strong></p>
+  <p>台灣有超過兩百萬戶家庭飼養犬貓，寵物已經是許多人的家庭成員。飼主對動物醫療品質的期待逐年提高，但獸醫師手上的工具卻被法規限制住——不是因為專業不夠，而是因為藥買不到。一個連基本用藥都無法順暢取得的產業，要怎麼談精準醫療、怎麼談重症照護、怎麼談跟國際接軌？</p>
+  <p>現行的公告制和貼標方案，是獸醫界在體制內盡最大努力爭取到的過渡安排。但過渡安排不能變成永久的常態。行政命令層級的辦法隨時可以被推翻，正面表列永遠跟不上臨床需求，貼標的行政成本持續存在——這些結構性問題不會自己消失。</p>
+  <p><strong>我們需要正式面對獸醫師用藥困境這個議題，不再把它當作獸醫界和藥師界之間的小爭執，而是把它當作一個需要立法層級解決的公共政策問題。</strong></p>
+  <p>具體而言：</p>
+  <p>我們需要立法委員關注這個議題，在立法院提出修法案，不管是修獸醫師法、動保法還是藥事法。我們需要農業部更積極地推動制度改革，不能只做行政層級的微調。我們需要衛福部正視藥事法第50條的歷史遺漏，而不是把這個遺漏當作維護管轄權的工具。我們需要飼主站出來發聲——因為當你的毛孩半夜急診時，獸醫師能不能即時拿到救命的藥，取決於這個你可能從未聽過的法規問題。</p>
+  <p>十三年了。從民國102年偽藥事件引爆爭議、104年動保法修法、到115年公聽會——每一次都是危機倒逼出來的微幅改善，而不是制度主動跟上現實。台灣的獸醫師不該再繼續在「合法使用、違法取得」的灰色地帶裡執業。台灣的動物不該因為法規的荒謬而在急診室裡等不到藥。</p>
+  <p><strong>這件事，不能再等下一個十年。</strong></p>
+</div>
+
+<!-- ═══ END CTA ═══ -->
+<section class="end-cta">
+  <h2>不能再等下一個十年</h2>
+  <p>十三年了。每一隻在急診室裡等藥的動物、每一位在灰色地帶執業的獸醫師、每一個為毛孩擔心的飼主——都在等這個制度跟上現實。改變需要你的參與。</p>
+  <div class="end-actions">
+    <div class="end-action">
+      <h4>📢 分享這篇文章</h4>
+      <p>讓更多人知道獸醫師用藥困境不是醫療問題，是法規問題。認識問題的人越多，推動修法的基礎就越厚。</p>
+    </div>
+    <div class="end-action">
+      <h4>🗣 向立法委員反映</h4>
+      <p>聯繫你選區的立委，告訴他們：飼主關心動物用藥權，支持修改獸醫師法和動保法，保障獸醫師合法取得藥品的權利。</p>
+    </div>
+    <div class="end-action">
+      <h4>📝 記錄你的經歷</h4>
+      <p>如果你的毛孩曾因缺藥、取藥困難或延誤治療而受影響，請把經驗記錄下來。真實案例是推動政策改變最有力的證據。</p>
+    </div>
+    <div class="end-action">
+      <h4>🤝 理解與支持你的獸醫師</h4>
+      <p>獸醫師不是不想給你的毛孩最好的治療，是制度不讓他們順利拿到藥。你的理解，是他們在第一線堅持下去的力量。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="text-align:center; padding:2rem 1.5rem; font-size:0.78rem; color:var(--slate); border-top:1px solid var(--rule);">
+  <p style="margin-bottom:0.5rem;">本文基於2026年4月公聽會紀錄、公開法規資料及國際法規比較整理</p>
+  <p style="margin-bottom:1.5rem;">如有疑問或想了解更多，歡迎洽詢您的獸醫師</p>
+  <p style="font-size:0.7rem; color:#999;">vetgov.tw · 獸醫用藥權修法事件簿 · 本站由公民科技志工自發維護</p>
+</footer>
+
+</body>
+</html>

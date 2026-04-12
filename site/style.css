@@ -964,7 +964,7 @@ strong { font-weight: 700; color: var(--ink); }
   font-family: var(--serif);
   font-size: var(--step-3);
   line-height: 1.5;
-  color: var(--mist-soft);
+  color: var(--paper-dark);
   margin-bottom: 80px;
   font-weight: 500;
 }
@@ -1013,7 +1013,7 @@ strong { font-weight: 700; color: var(--ink); }
 .voice--07::before { background: var(--gold); }
 .voice--07 h4 { color: var(--paper); font-size: var(--step-4); }
 .voice--07 .voice__hashtag { color: var(--gold); }
-.voice--07 p { color: var(--mist-soft); font-size: var(--step-1); line-height: 1.85; }
+.voice--07 p { color: var(--paper-dark); font-size: var(--step-1); line-height: 1.85; }
 .voice--07 p strong {
   color: var(--gold-light);
   background: linear-gradient(180deg, transparent 60%, rgba(201, 163, 74, 0.25) 60%);
@@ -1993,7 +1993,7 @@ strong { font-weight: 700; color: var(--ink); }
   font-family: var(--serif);
   font-size: var(--step-2);
   line-height: 1.75;
-  color: var(--mist-soft);
+  color: var(--paper-dark);
   max-width: 620px;
 }
 .cta__lead {
@@ -2033,7 +2033,7 @@ strong { font-weight: 700; color: var(--ink); }
 .cta__sig-date {
   font-family: var(--mono) !important;
   font-size: 11px !important;
-  color: var(--mist) !important;
+  color: var(--mist-soft) !important;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-top: 16px !important;

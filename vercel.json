@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:css|js|woff2|svg|png|jpg|webp)",
+      "source": "/:path*.:ext(css|js|woff2|svg|png|jpg|webp)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
       ]

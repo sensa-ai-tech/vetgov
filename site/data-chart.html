@@ -3,222 +3,327 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>動保用藥登錄現況數據圖</title>
+<title>動保用藥登錄現況數據圖 · vetgov.tw</title>
+<meta name="description" content="701 項公告藥品，去重複後僅 117 種完成登錄，16.7%。國際大廠登錄數零。急救關鍵劑型嚴重缺口。">
+<meta property="og:title" content="動保用藥登錄現況數據圖 · vetgov.tw">
+<meta property="og:site_name" content="獸醫用藥權修法事件簿 · vetgov.tw">
+<meta property="og:image" content="https://vetgov.tw/og-image.svg">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://vetgov.tw/data-chart">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-@page{size:A4 portrait;margin:0}
-body{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;width:210mm;height:297mm;margin:0 auto;overflow:hidden;background:#0f0f1a;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.page{width:210mm;height:297mm;padding:8mm;display:flex;flex-direction:column;gap:4mm}
+/* ── Data chart page overrides ── */
+.dc { background: var(--ink); color: var(--paper); min-height: 100vh; }
+.dc__inner { max-width: 900px; margin: 0 auto; padding: 60px 32px 80px; }
 
-/* HEADER */
-.header{text-align:center;padding:4mm 0 2mm}
-.header .tag{display:inline-block;background:#C0392B;color:#fff;font-size:7pt;font-weight:700;padding:1.5mm 4mm;border-radius:1.5mm;letter-spacing:.15em;margin-bottom:2mm}
-.header h1{font-size:22pt;font-weight:900;line-height:1.3}
-.header h1 span{color:#F39C12}
-.header .sub{font-size:9pt;color:rgba(255,255,255,.5);margin-top:2mm}
+.dc__header { text-align: center; margin-bottom: 48px; }
+.dc__tag {
+  display: inline-block; background: var(--blood); color: var(--paper);
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  padding: 4px 14px; border-radius: 3px; letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+.dc__header h1 {
+  font-family: var(--serif); font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.25;
+  margin-bottom: 12px;
+}
+.dc__header h1 span { color: var(--gold); }
+.dc__sub { font-size: 14px; color: var(--mist-soft); }
 
-/* BIG NUMBER ROW */
-.big-row{display:flex;gap:3mm;justify-content:center}
-.big-card{flex:1;border-radius:3mm;padding:5mm 4mm;text-align:center;position:relative;overflow:hidden}
-.big-card.red{background:linear-gradient(135deg,#C0392B,#e74c3c)}
-.big-card.dark{background:#1a1a2e;border:.4mm solid #333}
-.big-card.gold{background:linear-gradient(135deg,#D35400,#E67E22)}
-.big-num{font-size:36pt;font-weight:900;line-height:1}
-.big-label{font-size:8pt;margin-top:2mm;opacity:.85;line-height:1.4}
+/* ── Big number cards ── */
+.dc__bigs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+.dc__big {
+  border-radius: 8px; padding: 28px 20px; text-align: center;
+}
+.dc__big--dark { background: var(--ink-soft); border: 1px solid #333; }
+.dc__big--red { background: linear-gradient(135deg, var(--blood-dark), var(--blood)); }
+.dc__big--gold { background: linear-gradient(135deg, #a84300, var(--gold-dark, #c87000)); }
+.dc__big-num { font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 900; line-height: 1; }
+.dc__big-label { font-size: 13px; margin-top: 8px; opacity: 0.85; line-height: 1.5; }
 
-/* DONUT CHART */
-.donut-section{display:flex;gap:4mm;align-items:center}
-.donut-wrap{width:50mm;height:50mm;flex-shrink:0;position:relative}
-.donut-wrap svg{width:100%;height:100%}
-.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.donut-center .pct{font-size:22pt;font-weight:900;color:#C0392B}
-.donut-center .pct-label{font-size:7pt;color:rgba(255,255,255,.5)}
-.donut-detail{flex:1}
-.donut-detail h2{font-size:13pt;font-weight:900;margin-bottom:3mm}
-.donut-legend{display:flex;flex-direction:column;gap:2mm}
-.legend-item{display:flex;align-items:center;gap:2mm;font-size:8.5pt}
-.legend-dot{width:3mm;height:3mm;border-radius:.5mm;flex-shrink:0}
-.legend-dot.reg{background:#C0392B}
-.legend-dot.unreg{background:#333}
+/* ── Donut section ── */
+.dc__donut { display: flex; gap: 32px; align-items: center; margin-bottom: 48px; }
+.dc__donut-svg { width: 160px; height: 160px; flex-shrink: 0; position: relative; }
+.dc__donut-svg svg { width: 100%; height: 100%; }
+.dc__donut-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;
+}
+.dc__donut-pct { font-family: var(--serif); font-size: 2rem; font-weight: 900; color: var(--blood); }
+.dc__donut-pct-label { font-size: 11px; color: var(--mist); }
+.dc__donut-detail h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 900; margin-bottom: 16px; }
+.dc__legend { display: flex; flex-direction: column; gap: 8px; }
+.dc__legend-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--mist-soft); }
+.dc__legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.dc__legend-dot--reg { background: var(--blood); }
+.dc__legend-dot--unreg { background: #444; }
+.dc__donut-note {
+  margin-top: 16px; padding: 12px 16px; background: rgba(192,57,43,0.12);
+  border-radius: 6px; font-size: 13px; line-height: 1.7; color: var(--mist-soft);
+  border-left: 3px solid var(--blood);
+}
 
-/* BAR CHART - COMPANIES */
-.bar-section{background:#1a1a2e;border-radius:3mm;padding:4mm 5mm}
-.bar-section h2{font-size:11pt;font-weight:900;margin-bottom:3mm;color:#F39C12}
-.bar-row{display:flex;align-items:center;gap:2mm;margin-bottom:1.8mm}
-.bar-name{width:42mm;font-size:7pt;text-align:right;color:rgba(255,255,255,.7);flex-shrink:0}
-.bar-track{flex:1;height:4.5mm;background:#222;border-radius:1mm;overflow:hidden;position:relative}
-.bar-fill{height:100%;border-radius:1mm;display:flex;align-items:center;justify-content:flex-end;padding-right:1.5mm;font-size:6pt;font-weight:700;color:#fff;min-width:8mm}
-.bar-fill.local{background:linear-gradient(90deg,#2980B9,#3498DB)}
-.bar-fill.intl{background:linear-gradient(90deg,#C0392B,#e74c3c)}
-.bar-fill.gov{background:linear-gradient(90deg,#27AE60,#2ECC71)}
-.bar-note{font-size:6.5pt;color:rgba(255,255,255,.35);margin-top:2mm;text-align:center}
+/* ── Bar chart ── */
+.dc__bars { background: var(--ink-soft); border-radius: 8px; padding: 28px; margin-bottom: 48px; }
+.dc__bars h2 { font-family: var(--serif); font-size: 1.1rem; font-weight: 900; color: var(--gold); margin-bottom: 20px; }
+.dc__bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.dc__bar-name { width: 160px; font-size: 13px; text-align: right; color: var(--mist-soft); flex-shrink: 0; }
+.dc__bar-track { flex: 1; height: 18px; background: #222; border-radius: 4px; overflow: hidden; position: relative; }
+.dc__bar-fill {
+  height: 100%; border-radius: 4px; display: flex; align-items: center;
+  justify-content: flex-end; padding-right: 8px;
+  font-size: 12px; font-weight: 700; color: #fff; min-width: 32px;
+}
+.dc__bar-fill--local { background: linear-gradient(90deg, #2980B9, #3498DB); }
+.dc__bar-fill--intl { background: linear-gradient(90deg, var(--blood-dark), var(--blood)); }
+.dc__bar-fill--gov { background: linear-gradient(90deg, #27AE60, #2ECC71); }
+.dc__bar-note { font-size: 12px; color: var(--mist); margin-top: 14px; text-align: center; }
 
-/* FORM BREAKDOWN */
-.form-section{display:flex;gap:3mm}
-.form-card{flex:1;background:#1a1a2e;border-radius:3mm;padding:4mm;text-align:center}
-.form-card h3{font-size:8pt;font-weight:700;color:#F39C12;margin-bottom:2mm}
-.form-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5mm}
-.form-pill{background:#222;border-radius:1.5mm;padding:1.5mm 3mm;font-size:6.5pt;color:rgba(255,255,255,.7)}
-.form-pill .ct{color:#3498DB;font-weight:700;margin-left:1mm}
+/* ── Form breakdown ── */
+.dc__forms { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; margin-bottom: 48px; }
+.dc__form-card { background: var(--ink-soft); border-radius: 8px; padding: 24px; }
+.dc__form-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 14px; text-align: center; }
+.dc__form-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.dc__form-pill {
+  background: #222; border-radius: 4px; padding: 6px 12px;
+  font-size: 13px; color: var(--mist-soft);
+}
+.dc__form-pill .ct { color: #3498DB; font-weight: 700; margin-left: 4px; }
+.dc__form-alert { border: 1px solid var(--blood); }
+.dc__form-alert h3 { color: var(--blood); }
+.dc__form-alert-body { font-size: 14px; line-height: 1.8; color: var(--mist-soft); }
+.dc__form-alert-body strong.red { color: var(--blood); }
+.dc__form-alert-body strong.gold { color: var(--gold); }
+.dc__form-alert-note { font-size: 12px; color: var(--mist); margin-top: 8px; }
 
-/* MISSING */
-.missing-section{background:linear-gradient(135deg,#1a1a2e,#2d1b3d);border-radius:3mm;padding:5mm;border:.4mm solid #C0392B}
-.missing-section h2{font-size:12pt;font-weight:900;color:#C0392B;margin-bottom:3mm;text-align:center}
-.missing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2mm}
-.missing-item{background:rgba(192,57,43,.1);border-radius:2mm;padding:3mm;text-align:center;border:.3mm solid rgba(192,57,43,.3)}
-.missing-item .icon{font-size:12pt;margin-bottom:1mm}
-.missing-item .name{font-size:8pt;font-weight:700;color:#e74c3c}
-.missing-item .desc{font-size:6.5pt;color:rgba(255,255,255,.5);margin-top:1mm;line-height:1.4}
+/* ── Missing drugs ── */
+.dc__missing {
+  background: linear-gradient(135deg, var(--ink-soft), #2d1b3d);
+  border-radius: 8px; padding: 32px; border: 1px solid var(--blood);
+  margin-bottom: 48px;
+}
+.dc__missing h2 {
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 900;
+  color: var(--blood); margin-bottom: 20px; text-align: center;
+}
+.dc__missing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.dc__missing-item {
+  background: rgba(192,57,43,0.08); border-radius: 6px; padding: 16px;
+  text-align: center; border: 1px solid rgba(192,57,43,0.2);
+}
+.dc__missing-icon { font-size: 1.5rem; margin-bottom: 6px; }
+.dc__missing-name { font-size: 14px; font-weight: 700; color: #e74c3c; }
+.dc__missing-desc { font-size: 12px; color: var(--mist-soft); margin-top: 6px; line-height: 1.5; }
 
-/* BOTTOM */
-.bottom-bar{display:flex;justify-content:space-between;align-items:center;padding:2mm 2mm 0}
-.bottom-bar .src{font-size:5.5pt;color:rgba(255,255,255,.25)}
-.bottom-bar .slogan{font-size:9pt;font-weight:900;color:#C0392B}
+/* ── Bottom ── */
+.dc__bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 20px; border-top: 1px solid #333;
+}
+.dc__bottom-src { font-size: 11px; color: var(--mist); }
+.dc__bottom-slogan { font-size: 16px; font-weight: 900; color: var(--blood); }
+
+/* ── Mobile ── */
+@media (max-width: 720px) {
+  .dc__inner { padding: 32px 20px 60px; }
+  .dc__bigs { grid-template-columns: 1fr; gap: 12px; }
+  .dc__donut { flex-direction: column; text-align: center; }
+  .dc__donut-svg { width: 140px; height: 140px; }
+  .dc__legend { align-items: center; }
+  .dc__bar-name { width: 100px; font-size: 11px; }
+  .dc__forms { grid-template-columns: 1fr; }
+  .dc__missing-grid { grid-template-columns: 1fr 1fr; }
+  .dc__bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (max-width: 480px) {
+  .dc__missing-grid { grid-template-columns: 1fr; }
+  .dc__bar-name { width: 80px; font-size: 10px; }
+}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <div class="header">
-    <div class="tag">數據圖表 ─ 截至 115 年 3 月 31 日</div>
-    <h1>動保用藥登錄現況<br>只有 <span>16.7%</span> 的藥完成登錄</h1>
-    <div class="sub">資料來源：農業部防檢署「動物保護藥品登錄清單」實際統計分析</div>
+<!-- NAV -->
+<header class="nav" style="position:relative;">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <span class="nav__mark">vetgov.tw</span>
+      <span class="nav__sub">獸醫用藥權修法事件簿</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#manifesto">聲明</a>
+      <a href="index.html#demands">問題</a>
+      <a href="analysis.html">深度解析</a>
+      <a href="index.html#voices">處境</a>
+      <a href="data-chart.html" class="nav__cta nav__cta--gold">數據</a>
+      <a href="index.html#timeline">時間線</a>
+      <a href="hearing-0410.html">4/10 速報</a>
+    </nav>
   </div>
+</header>
 
-  <!-- BIG NUMBERS -->
-  <div class="big-row">
-    <div class="big-card dark">
-      <div class="big-num">701</div>
-      <div class="big-label">公告可供動物<br>使用的人用藥品項數</div>
+<section class="dc">
+  <div class="dc__inner">
+
+    <div class="dc__header">
+      <div class="dc__tag">數據圖表 ─ 截至 115 年 3 月 31 日</div>
+      <h1>動保用藥登錄現況<br>只有 <span>16.7%</span> 的藥完成登錄</h1>
+      <p class="dc__sub">資料來源：農業部防檢署「動物保護藥品登錄清單」實際統計分析</p>
     </div>
-    <div class="big-card red">
-      <div class="big-num">117</div>
-      <div class="big-label">去除重複後<br>實際完成登錄的藥物</div>
+
+    <!-- BIG NUMBERS -->
+    <div class="dc__bigs">
+      <div class="dc__big dc__big--dark">
+        <div class="dc__big-num">701</div>
+        <div class="dc__big-label">公告可供動物<br>使用的人用藥品項數</div>
+      </div>
+      <div class="dc__big dc__big--red">
+        <div class="dc__big-num">117</div>
+        <div class="dc__big-label">去除重複後<br>實際完成登錄的藥物</div>
+      </div>
+      <div class="dc__big dc__big--gold">
+        <div class="dc__big-num">584</div>
+        <div class="dc__big-label">尚未登錄<br>7/1 後醫院不能直接買</div>
+      </div>
     </div>
-    <div class="big-card gold">
-      <div class="big-num">584</div>
-      <div class="big-label">尚未登錄<br>7/1 後醫院不能直接買</div>
+
+    <!-- DONUT + DETAIL -->
+    <div class="dc__donut">
+      <div class="dc__donut-svg">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#333" stroke-width="14"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#c9531a" stroke-width="14"
+            stroke-dasharray="50.37 301.6" stroke-dashoffset="75.4" stroke-linecap="round"/>
+        </svg>
+        <div class="dc__donut-center">
+          <div class="dc__donut-pct">16.7%</div>
+          <div class="dc__donut-pct-label">登錄完成率</div>
+        </div>
+      </div>
+      <div class="dc__donut-detail">
+        <h2>登錄總筆數 vs 不重複藥物數</h2>
+        <div class="dc__legend">
+          <div class="dc__legend-item"><div class="dc__legend-dot dc__legend-dot--reg"></div>總登錄筆數（含不同廠牌/劑型/濃度）：<strong>203 件</strong></div>
+          <div class="dc__legend-item"><div class="dc__legend-dot dc__legend-dot--reg"></div>去除重複後不重複有效成分：<strong>117 種</strong></div>
+          <div class="dc__legend-item"><div class="dc__legend-dot dc__legend-dot--unreg"></div>其中西藥單方成分：<strong>112 種</strong></div>
+          <div class="dc__legend-item"><div class="dc__legend-dot dc__legend-dot--unreg"></div>蛇毒血清/複方品項：<strong>5 種</strong></div>
+        </div>
+        <div class="dc__donut-note">
+          新聞報導常引用「216 件」或「144 項」等數字。實際分析原始資料後，總登錄筆數為 203 件，但同一藥物的不同廠牌、劑型、濃度重複計算。去除重複後，真正可用的不重複藥物僅 <strong style="color:var(--gold)">117 種</strong>，登錄完成率僅 <strong style="color:var(--gold)">16.7%</strong>。
+        </div>
+      </div>
+    </div>
+
+    <!-- BAR CHART -->
+    <div class="dc__bars">
+      <h2>各藥商登錄件數 ─ 集中於少數本土藥廠，國際大廠幾乎掛零</h2>
+      <div class="dc__bar-row"><div class="dc__bar-name">瑞士藥廠</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:100%">58</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">強生化學製藥</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:62%">36</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">成大藥品</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:29%">17</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">麥迪森醫藥</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:26%">15</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">杏輝藥品</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:21%">12</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">新瑞生物科技</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:17%">10</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">台裕化學製藥</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:17%">10</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">信東生技</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:16%">9</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">福元化學製藥</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--local" style="width:14%">8</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">疾管署（血清）</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--gov" style="width:7%">4</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name">傑特貝林（唯一外商）</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--intl" style="width:3.5%">2</div></div></div>
+      <div class="dc__bar-row"><div class="dc__bar-name" style="color:var(--blood)">輝瑞 / 默克 / 諾華 / 拜耳 ...</div><div class="dc__bar-track"><div class="dc__bar-fill dc__bar-fill--intl" style="width:0%;min-width:0"><span style="position:absolute;left:8px;color:var(--blood);font-weight:900">0</span></div></div></div>
+      <div class="dc__bar-note">本土藥廠　國際藥廠　政府機構 ── 國際大廠登錄數：<strong style="color:var(--blood)">零</strong></div>
+    </div>
+
+    <!-- DOSAGE FORM -->
+    <div class="dc__forms">
+      <div class="dc__form-card">
+        <h3>已登錄劑型分布</h3>
+        <div class="dc__form-grid">
+          <div class="dc__form-pill">錠劑<span class="ct">58</span></div>
+          <div class="dc__form-pill">膠囊劑<span class="ct">33</span></div>
+          <div class="dc__form-pill">膜衣錠<span class="ct">31</span></div>
+          <div class="dc__form-pill">注射劑<span class="ct">29</span></div>
+          <div class="dc__form-pill">點眼液<span class="ct">21</span></div>
+          <div class="dc__form-pill">乳膏劑<span class="ct">12</span></div>
+          <div class="dc__form-pill">其他<span class="ct">19</span></div>
+        </div>
+      </div>
+      <div class="dc__form-card dc__form-alert">
+        <h3>嚴重缺口</h3>
+        <div class="dc__form-alert-body">
+          口服藥（錠劑+膠囊+膜衣錠）占了 <strong class="gold">60%</strong><br>
+          注射劑僅 <strong class="red">29 件</strong>（急救關鍵）<br>
+          吸入劑僅 <strong class="red">1 件</strong>（麻醉用 Sevoflurane）<br>
+          醫用氧氣 <strong class="red">0 件</strong><br>
+          支氣管擴張劑 <strong class="red">未登錄</strong>
+        </div>
+        <div class="dc__form-alert-note">急診最需要的劑型，登錄最少</div>
+      </div>
+    </div>
+
+    <!-- MISSING CRITICAL DRUGS -->
+    <div class="dc__missing">
+      <h2>臨床關鍵藥物仍未登錄（舉例）</h2>
+      <div class="dc__missing-grid">
+        <div class="dc__missing-item">
+          <div class="dc__missing-icon">💉</div>
+          <div class="dc__missing-name">Furosemide 注射劑</div>
+          <div class="dc__missing-desc">急性肺水腫首選利尿劑<br>急診必備，未登錄</div>
+        </div>
+        <div class="dc__missing-item">
+          <div class="dc__missing-icon">🫁</div>
+          <div class="dc__missing-name">醫用氧氣</div>
+          <div class="dc__missing-desc">所有急救的基本條件<br>供應鏈與制度不相容</div>
+        </div>
+        <div class="dc__missing-item">
+          <div class="dc__missing-icon">💊</div>
+          <div class="dc__missing-name">Propofol</div>
+          <div class="dc__missing-desc">靜脈麻醉誘導劑<br>每日手術必用</div>
+        </div>
+        <div class="dc__missing-item">
+          <div class="dc__missing-icon">🩸</div>
+          <div class="dc__missing-name">Dopamine / Dobutamine</div>
+          <div class="dc__missing-desc">升壓劑/強心劑<br>休克急救用</div>
+        </div>
+        <div class="dc__missing-item">
+          <div class="dc__missing-icon">🌬</div>
+          <div class="dc__missing-name">支氣管擴張劑</div>
+          <div class="dc__missing-desc">Terbutaline/Aminophylline<br>呼吸急症救命藥</div>
+        </div>
+        <div class="dc__missing-item">
+          <div class="dc__missing-icon">🧬</div>
+          <div class="dc__missing-name">Benazepril / Enalapril</div>
+          <div class="dc__missing-desc">ACE 抑制劑<br>心臟病長期用藥</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="dc__bottom">
+      <div class="dc__bottom-src">資料來源：農業部防檢署動物保護藥品登錄清單（截至115年3月31日）原始資料統計 ｜ 製表：vetgov.tw</div>
+      <div class="dc__bottom-slogan">正視畸形法源</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__title">vetgov.tw</div>
+      <p>獸醫用藥權修法事件簿</p>
+    </div>
+    <div class="footer__about">
+      <p>本站由公民科技志工自發維護。不接受商業贊助、不嵌入廣告、不追蹤使用者。MIT 授權 · 歡迎 fork 追蹤其他公民議題。</p>
+      <p class="footer__disclaimer">本站不提供法律或獸醫專業建議。所有資訊以主管機關最新公告為準。</p>
     </div>
   </div>
+</footer>
 
-  <!-- DONUT + DETAIL -->
-  <div class="donut-section">
-    <div class="donut-wrap">
-      <svg viewBox="0 0 120 120">
-        <!-- Background circle -->
-        <circle cx="60" cy="60" r="48" fill="none" stroke="#333" stroke-width="14"/>
-        <!-- Filled arc: 16.7% = 60.12 degrees. Circumference = 2*pi*48 = 301.6. 16.7% = 50.37 -->
-        <circle cx="60" cy="60" r="48" fill="none" stroke="#C0392B" stroke-width="14" 
-          stroke-dasharray="50.37 301.6" stroke-dashoffset="75.4" stroke-linecap="round"/>
-      </svg>
-      <div class="donut-center">
-        <div class="pct">16.7%</div>
-        <div class="pct-label">登錄完成率</div>
-      </div>
-    </div>
-    <div class="donut-detail">
-      <h2>登錄總筆數 vs 不重複藥物數</h2>
-      <div class="donut-legend">
-        <div class="legend-item"><div class="legend-dot reg"></div>總登錄筆數（含不同廠牌/劑型/濃度）：<strong>203 件</strong></div>
-        <div class="legend-item"><div class="legend-dot reg"></div>去除重複後不重複有效成分：<strong>117 種</strong></div>
-        <div class="legend-item"><div class="legend-dot unreg"></div>其中西藥單方成分：<strong>112 種</strong></div>
-        <div class="legend-item"><div class="legend-dot unreg"></div>蛇毒血清/複方品項：<strong>5 種</strong></div>
-      </div>
-      <div style="margin-top:3mm;padding:2.5mm;background:rgba(192,57,43,.15);border-radius:2mm;font-size:7.5pt;line-height:1.5;border-left:.8mm solid #C0392B">
-        ⚠ 新聞報導常引用「216 件」或「144 項」等數字。實際分析原始資料後，總登錄筆數為 203 件，但同一藥物的不同廠牌、劑型、濃度重複計算。去除重複後，真正可用的不重複藥物僅 <strong style="color:#F39C12">117 種</strong>，登錄完成率僅 <strong style="color:#F39C12">16.7%</strong>。
-      </div>
-    </div>
-  </div>
-
-  <!-- BAR CHART: COMPANIES -->
-  <div class="bar-section">
-    <h2>各藥商登錄件數 ─ 集中於少數本土藥廠，國際大廠幾乎掛零</h2>
-    <div class="bar-row"><div class="bar-name">瑞士藥廠</div><div class="bar-track"><div class="bar-fill local" style="width:100%">58</div></div></div>
-    <div class="bar-row"><div class="bar-name">強生化學製藥</div><div class="bar-track"><div class="bar-fill local" style="width:62%">36</div></div></div>
-    <div class="bar-row"><div class="bar-name">成大藥品</div><div class="bar-track"><div class="bar-fill local" style="width:29%">17</div></div></div>
-    <div class="bar-row"><div class="bar-name">麥迪森醫藥</div><div class="bar-track"><div class="bar-fill local" style="width:26%">15</div></div></div>
-    <div class="bar-row"><div class="bar-name">杏輝藥品</div><div class="bar-track"><div class="bar-fill local" style="width:21%">12</div></div></div>
-    <div class="bar-row"><div class="bar-name">新瑞生物科技</div><div class="bar-track"><div class="bar-fill local" style="width:17%">10</div></div></div>
-    <div class="bar-row"><div class="bar-name">台裕化學製藥</div><div class="bar-track"><div class="bar-fill local" style="width:17%">10</div></div></div>
-    <div class="bar-row"><div class="bar-name">信東生技</div><div class="bar-track"><div class="bar-fill local" style="width:16%">9</div></div></div>
-    <div class="bar-row"><div class="bar-name">福元化學製藥</div><div class="bar-track"><div class="bar-fill local" style="width:14%">8</div></div></div>
-    <div class="bar-row"><div class="bar-name">疾管署（血清）</div><div class="bar-track"><div class="bar-fill gov" style="width:7%">4</div></div></div>
-    <div class="bar-row"><div class="bar-name">傑特貝林（唯一外商）</div><div class="bar-track"><div class="bar-fill intl" style="width:3.5%">2</div></div></div>
-    <div class="bar-row"><div class="bar-name" style="color:#C0392B">輝瑞 / 默克 / 諾華 / 拜耳 ...</div><div class="bar-track"><div class="bar-fill intl" style="width:0%;min-width:0"><span style="position:absolute;left:2mm;color:#C0392B;font-weight:900">0</span></div></div></div>
-    <div class="bar-note">🔵 本土藥廠　🔴 國際藥廠　🟢 政府機構 ──  國際大廠登錄數：<strong style="color:#C0392B">零</strong></div>
-  </div>
-
-  <!-- DOSAGE FORM -->
-  <div class="form-section">
-    <div class="form-card" style="flex:1.2">
-      <h3>已登錄劑型分布</h3>
-      <div class="form-grid">
-        <div class="form-pill">錠劑<span class="ct">58</span></div>
-        <div class="form-pill">膠囊劑<span class="ct">33</span></div>
-        <div class="form-pill">膜衣錠<span class="ct">31</span></div>
-        <div class="form-pill">注射劑<span class="ct">29</span></div>
-        <div class="form-pill">點眼液<span class="ct">21</span></div>
-        <div class="form-pill">乳膏劑<span class="ct">12</span></div>
-        <div class="form-pill">其他<span class="ct">19</span></div>
-      </div>
-    </div>
-    <div class="form-card" style="flex:1;border:.4mm solid #C0392B">
-      <h3 style="color:#C0392B">⚠ 嚴重缺口</h3>
-      <div style="font-size:7.5pt;text-align:left;line-height:1.7;color:rgba(255,255,255,.75);padding:1mm">
-        口服藥（錠劑+膠囊+膜衣錠）占了 <strong style="color:#F39C12">60%</strong><br>
-        注射劑僅 <strong style="color:#C0392B">29 件</strong>（急救關鍵）<br>
-        吸入劑僅 <strong style="color:#C0392B">1 件</strong>（麻醉用 Sevoflurane）<br>
-        醫用氧氣 <strong style="color:#C0392B">0 件</strong><br>
-        支氣管擴張劑 <strong style="color:#C0392B">未登錄</strong><br>
-        <span style="font-size:6.5pt;color:rgba(255,255,255,.4)">急診最需要的劑型，登錄最少</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- MISSING CRITICAL DRUGS -->
-  <div class="missing-section">
-    <h2>🚨 臨床關鍵藥物仍未登錄（舉例）</h2>
-    <div class="missing-grid">
-      <div class="missing-item">
-        <div class="icon">💉</div>
-        <div class="name">Furosemide 注射劑</div>
-        <div class="desc">急性肺水腫首選利尿劑<br>急診必備，未登錄</div>
-      </div>
-      <div class="missing-item">
-        <div class="icon">🫁</div>
-        <div class="name">醫用氧氣</div>
-        <div class="desc">所有急救的基本條件<br>供應鏈與制度不相容</div>
-      </div>
-      <div class="missing-item">
-        <div class="icon">💊</div>
-        <div class="name">Propofol</div>
-        <div class="desc">靜脈麻醉誘導劑<br>每日手術必用</div>
-      </div>
-      <div class="missing-item">
-        <div class="icon">🩸</div>
-        <div class="name">Dopamine / Dobutamine</div>
-        <div class="desc">升壓劑/強心劑<br>休克急救用</div>
-      </div>
-      <div class="missing-item">
-        <div class="icon">🌬</div>
-        <div class="name">支氣管擴張劑</div>
-        <div class="desc">Terbutaline/Aminophylline<br>呼吸急症救命藥</div>
-      </div>
-      <div class="missing-item">
-        <div class="icon">🧬</div>
-        <div class="name">Benazepril / Enalapril</div>
-        <div class="desc">ACE 抑制劑<br>心臟病長期用藥</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BOTTOM -->
-  <div class="bottom-bar">
-    <div class="src">資料來源：農業部防檢署動物保護藥品登錄清單（截至115年3月31日）原始資料統計 ｜ 製表：vetgov.tw</div>
-    <div class="slogan">負面表列 ‧ 立即修法</div>
-  </div>
-
-</div>
 </body>
 </html>

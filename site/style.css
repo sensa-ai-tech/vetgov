@@ -499,6 +499,22 @@ strong { font-weight: 700; color: var(--ink); }
   margin-top: 4px;
 }
 
+/* Revoked variant: 已註銷狀態 */
+.hero__ticker--revoked {
+  background: linear-gradient(135deg, #1a3a2e, var(--ink));
+  box-shadow:
+    0 2px 0 var(--moss, #4a8c5e),
+    0 18px 50px -10px rgba(10,10,10,0.4);
+}
+.hero__ticker--revoked::before { background: var(--moss, #4a8c5e); }
+.hero__ticker--revoked .hero__ticker-num {
+  font-size: clamp(2.8rem, 1.8rem + 3.5vw, 4.5rem);
+  letter-spacing: 0;
+  line-height: 1;
+  padding-bottom: 6px;
+}
+.hero__ticker--revoked .hero__ticker-unit { color: #8ccdb8; }
+
 /* Hero mini-stats: 701 → 144 = 20.5% */
 .hero__stats-mini {
   display: inline-flex;

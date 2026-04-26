@@ -1,7 +1,93 @@
 {
-  "generated_at": "2026-04-17T12:00:00.000000Z",
+  "generated_at": "2026-04-26T04:54:38.423564Z",
   "policy_effective_date": "2026-07-01",
   "events": [
+    {
+      "date": "2026-07-01",
+      "title": "《人用藥品用於犬貓及非經濟動物之使用管理辦法》原定施行日(4/15 確認註銷)",
+      "summary": "新制要求人用藥品須由藥廠完成「動保用藥」品保登錄,才能合法販售給動物醫院。截至 115 年 3 月底,701 項公告藥品中,總登錄筆數 203 件(含同一藥物的不同廠牌、劑型、濃度重複計算),去除重複後真正可用的不重複藥物僅 117 種 — 登錄完成率 16.7%。剩下 584 項包含急救針劑、強心劑、支氣管擴張劑、代用血漿、吸入麻醉劑、醫用氧氣 — 動物醫院 7 月 1 日後將無法合法購買。",
+      "stance": "opposed",
+      "stakeholders": [
+        "農業部",
+        "動植物防疫檢疫署",
+        "衛福部食品藥物管理署",
+        "全國執業獸醫師",
+        "寵物飼主"
+      ],
+      "sources": [],
+      "importance": 5,
+      "origin": "seed",
+      "tier": "official"
+    },
+    {
+      "date": "2026-04-25",
+      "title": "獸法盟發布兩案分析 · 主張動保法/藥事法/獸醫師法三法聯動",
+      "summary": "獸法盟（TAVAR）發布深度分析報告,評估邱慧洳、郭昱晴兩案各有突破但仍存「六大缺口」。報告指出邱案保留「藥物不足時」五字使常態被描述為例外、未排除藥事法 §37 第 2 項調劑壟斷;郭案漏掉 §60 第 1 項處方法律地位、未修動保法。獸法盟主張需動保法、藥事法、獸醫師法三法聯動併案審查 — 動保法定義藥品身分、藥事法排除分業條款、獸醫師法明定調劑業務 — 並引入「法律擬制」機制,讓藥品自藥商供應予獸醫診療機構時即視為動物保護用藥品,使整條供應鏈獲得法律保護。",
+      "stance": "mixed",
+      "stakeholders": [
+        "獸法盟",
+        "TAVAR",
+        "立法院",
+        "邱慧洳委員",
+        "郭昱晴委員"
+      ],
+      "sources": [
+        {
+          "url": "https://tavar.org/news/2026-04-25-amendment-analysis",
+          "title": "委員修法草案深度分析",
+          "tier": "community"
+        }
+      ],
+      "importance": 4,
+      "origin": "seed",
+      "tier": "community"
+    },
+    {
+      "date": "2026-04-24",
+      "title": "立法院雙軌啟動 · 邱慧洳動保法案、郭昱晴藥事法案同日印發",
+      "summary": "立法院第 11 屆第 5 會期第 8 次會議同日印發兩份委員修法草案。邱慧洳委員（民眾黨團）領銜《動物保護法》修正草案（議程編號 11020922）— 修正第 3、4、31、40 條,新增「動物保護藥品」定義並排除藥事法部分條文適用,參照美國 FDA 模式採負面表列。郭昱晴委員等 19 人領銜《藥事法》修正草案（議程編號 11020920）— 允許藥商向動物診療機構推銷、納入動物診療機構為處方藥購買主體、簡化人藥轉動物用標示與分裝程序、賦予獸醫師親自調劑權限,主張「進門前衛福部管、進門後農業部管」。兩案戰略互補:邱案處理藥品身分認定,郭案處理供應通路與調劑。",
+      "stance": "supportive",
+      "stakeholders": [
+        "立法院",
+        "邱慧洳委員",
+        "郭昱晴委員",
+        "民眾黨團",
+        "民進黨"
+      ],
+      "sources": [
+        {
+          "url": "https://tavar.org/news/2026-04-24-committee-proposals",
+          "title": "兩位委員同日送案：邱慧洳、郭昱晴雙軌啟動修法",
+          "tier": "official"
+        }
+      ],
+      "importance": 5,
+      "origin": "seed",
+      "tier": "official"
+    },
+    {
+      "date": "2026-04-22",
+      "title": "管理辦法正式註銷發布令 · 進入新辦法研議過渡期",
+      "summary": "農業部與衛福部正式發布註銷令,撤回原定 2026 年 7 月 1 日施行的《人用藥品用於犬貓及非經濟動物之使用管理辦法》。從 4/10 公聽會暫緩表決、4/15 防檢署署長證實將直接註銷、到 4/22 正式公告,僅 12 天完成決策轉向。過渡期間獸醫師仍可依《動物保護法》第 4 條第 2 項規定,依專業判斷使用經公告之人用藥物類別,藥商與藥局可繼續供應,確保臨床用藥不中斷。獸法盟強調此為「十一年來第一次行政機關承認現行方案不足以解決問題」,但註銷只是起點,真正的解方仍需透過立法院的修法程序。",
+      "stance": "supportive",
+      "stakeholders": [
+        "農業部",
+        "防檢署",
+        "衛福部",
+        "獸醫師",
+        "獸法盟"
+      ],
+      "sources": [
+        {
+          "url": "https://tavar.org/news/2026-04-22-official-revocation",
+          "title": "管理辦法今日正式註銷：進入新辦法研議過渡期",
+          "tier": "official"
+        }
+      ],
+      "importance": 5,
+      "origin": "seed",
+      "tier": "official"
+    },
     {
       "date": "2026-04-15",
       "title": "寵物用藥新制確定「直接註銷」· 防檢署署長立院證實近日公告",
@@ -14,23 +100,6 @@
         "衛福部",
         "國民黨立委陳菁徽",
         "民進黨立委劉建國"
-      ],
-      "sources": [],
-      "importance": 5,
-      "origin": "seed",
-      "tier": "official"
-    },
-    {
-      "date": "2026-07-01",
-      "title": "《人用藥品用於犬貓及非經濟動物之使用管理辦法》原定施行日(4/15 確認註銷)",
-      "summary": "新制要求人用藥品須由藥廠完成「動保用藥」品保登錄,才能合法販售給動物醫院。截至 115 年 3 月底,701 項公告藥品中,總登錄筆數 203 件(含同一藥物的不同廠牌、劑型、濃度重複計算),去除重複後真正可用的不重複藥物僅 117 種 — 登錄完成率 16.7%。剩下 584 項包含急救針劑、強心劑、支氣管擴張劑、代用血漿、吸入麻醉劑、醫用氧氣 — 動物醫院 7 月 1 日後將無法合法購買。",
-      "stance": "opposed",
-      "stakeholders": [
-        "農業部",
-        "動植物防疫檢疫署",
-        "衛福部食品藥物管理署",
-        "全國執業獸醫師",
-        "寵物飼主"
       ],
       "sources": [],
       "importance": 5,
@@ -262,14 +331,32 @@
       "type": "rss",
       "tier": "community",
       "url": "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB%E5%B8%AB%E5%85%AC%E6%9C%83&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News · 獸法盟 / TAVAR",
+      "type": "rss",
+      "tier": "community",
+      "url": "https://news.google.com/rss/search?q=site%3Atavar.org+OR+%E7%8D%B8%E6%B3%95%E7%9B%9F&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News · 邱慧洳 動保法",
+      "type": "rss",
+      "tier": "media",
+      "url": "https://news.google.com/rss/search?q=%E9%82%B1%E6%85%A7%E6%B4%B3+%E5%8B%95%E4%BF%9D%E6%B3%95&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    },
+    {
+      "name": "Google News · 郭昱晴 藥事法",
+      "type": "rss",
+      "tier": "media",
+      "url": "https://news.google.com/rss/search?q=%E9%83%AD%E6%98%B1%E6%99%B4+%E8%97%A5%E4%BA%8B%E6%B3%95&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
     }
   ],
   "counts": {
-    "raw_total": 1284,
-    "raw_core": 8,
-    "raw_on_topic": 169,
-    "raw_official": 727,
-    "events": 9,
-    "events_official": 3
+    "raw_total": 0,
+    "raw_core": 0,
+    "raw_on_topic": 0,
+    "raw_official": 0,
+    "events": 12,
+    "events_official": 6
   }
 }

@@ -120,3 +120,18 @@ sources:
     type: rss
     tier: community
     url: "https://news.google.com/rss/search?q=%E7%8D%B8%E9%86%AB%E5%B8%AB%E5%85%AC%E6%9C%83&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News · 獸法盟 / TAVAR"
+    type: rss
+    tier: community
+    url: "https://news.google.com/rss/search?q=site%3Atavar.org+OR+%E7%8D%B8%E6%B3%95%E7%9B%9F&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News · 邱慧洳 動保法"
+    type: rss
+    tier: media
+    url: "https://news.google.com/rss/search?q=%E9%82%B1%E6%85%A7%E6%B4%B3+%E5%8B%95%E4%BF%9D%E6%B3%95&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+
+  - name: "Google News · 郭昱晴 藥事法"
+    type: rss
+    tier: media
+    url: "https://news.google.com/rss/search?q=%E9%83%AD%E6%98%B1%E6%99%B4+%E8%97%A5%E4%BA%8B%E6%B3%95&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
